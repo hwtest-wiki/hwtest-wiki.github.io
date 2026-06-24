@@ -96,6 +96,9 @@ def process_one(folder):
         return None
     md = max(mds, key=os.path.getsize)
     text = open(md, encoding="utf-8").read()
+    if "TODO：正文" in text:           # 跳过 new_article 生成的未完成 stub
+        print("  跳过(未完成):", os.path.basename(folder))
+        return None
     meta, body = parse_front_matter(text)
     base = os.path.basename(folder)
     mnn = re.search(r"第\s*0*(\d+)\s*篇", base + meta.get("篇号", ""))
