@@ -12,17 +12,12 @@
   gh auth refresh -h github.com -s workflow
   ```
 
-## 二、创建仓库并推送
-在 `site/` 目录下执行：
-```powershell
-cd D:\copilot\硬件测试科普系列\site
-git init -b main
-git add .
-git commit -m "init: 硬件测试科普百科 VitePress 站"
-gh repo create hw-test-wiki --public --source . --remote origin --push
-```
-> 仓库名 `hw-test-wiki` 可改。最终网址为 `https://<你的用户名>.github.io/hw-test-wiki/`。
-> 若想要 `https://<用户名>.github.io/`（根路径），把仓库命名为 `<用户名>.github.io`。
+## 二、当前仓库（已部署）
+- 组织：`hwtest-wiki`　仓库：`hwtest-wiki/hwtest-wiki.github.io`（命名为 `<org>.github.io` → 根路径站点）
+- 公网网址：**https://hwtest-wiki.github.io/**
+- 本地 `site/` 的 git 远程已指向该仓库（`git remote -v` 可查）。
+
+> 历史：仓库最初建于个人号，后转移到组织 `hwtest-wiki` 并改名以去掉用户名、拿到根域名。
 
 ## 三、开启 Pages
 仓库 → **Settings → Pages → Build and deployment → Source 选「GitHub Actions」**。
