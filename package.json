@@ -1,0 +1,15 @@
+{
+  "name": "hw-test-wiki",
+  "version": "1.0.0",
+  "description": "硬件测试科普百科",
+  "type": "module",
+  "scripts": {
+    "content": "python build_content.py",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}

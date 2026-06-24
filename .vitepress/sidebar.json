@@ -1,0 +1,52 @@
+[
+  {
+    "text": "模块一 · 测试基础与方法论",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "01 · 走进硬件测试",
+        "link": "/articles/01"
+      },
+      {
+        "text": "02 · 示波器入门",
+        "link": "/articles/02"
+      },
+      {
+        "text": "03 · 探头与接地的艺术",
+        "link": "/articles/03"
+      },
+      {
+        "text": "04 · 工程师的工具箱",
+        "link": "/articles/04"
+      },
+      {
+        "text": "05 · 测量为什么会不准",
+        "link": "/articles/05"
+      }
+    ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "06 · 电源完整性入门",
+        "link": "/articles/06"
+      },
+      {
+        "text": "07 · 压降与 PDN",
+        "link": "/articles/07"
+      }
+    ]
+  },
+  {
+    "text": "模块 · 整机防护与可靠性",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "12 · IP68 防水",
+        "link": "/articles/12"
+      }
+    ]
+  }
+]
