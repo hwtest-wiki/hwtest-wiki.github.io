@@ -37,7 +37,7 @@ features:
 
 <div class="subscribe-row">
   <a class="site" href="/articles/01">📚 全部文章</a>
-  <a class="bili" href="https://space.bilibili.com" target="_blank" rel="noreferrer">📺 B 站追更</a>
+  <a class="bili" href="https://space.bilibili.com/1817350057" target="_blank" rel="noreferrer">📺 B 站追更</a>
   <a class="wechat" href="/about">💚 公众号「硬件研发测试」</a>
 </div>
 

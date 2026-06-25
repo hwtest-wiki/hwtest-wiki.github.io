@@ -186,7 +186,7 @@ def main():
               "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
     # 首页（home 布局：Hero + Features 卡片 + 订阅入口）
-    BILI_URL = "https://space.bilibili.com"   # TODO: 换成你的 B 站空间链接
+    BILI_URL = "https://space.bilibili.com/1817350057"   # B 站空间
 
     def icon_of(name):
         table = [("基础", "🧰"), ("电源", "⚡"), ("PI", "⚡"), ("信号", "📡"),

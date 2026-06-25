@@ -25,7 +25,7 @@ outline: [2,3]
 同名内容在三端同步更新，挑你顺手的渠道关注即可：
 
 <div class="subscribe-row">
-  <a class="bili" href="https://space.bilibili.com" target="_blank" rel="noreferrer">📺 B 站：硬件测试入门系列</a>
+  <a class="bili" href="https://space.bilibili.com/1817350057" target="_blank" rel="noreferrer">📺 B 站：硬件测试入门系列</a>
   <a class="wechat" href="#wechat">💚 公众号：硬件研发测试</a>
 </div>
 
