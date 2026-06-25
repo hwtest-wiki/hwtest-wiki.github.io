@@ -6,3 +6,5 @@ node_modules/
 
 # 说明：articles/ 与 public/images/ 是「网站内容」，需要入库（由 build_content.py 本地生成后提交）。
 # 私有源（第NN篇/*.md、视频、封面、公众号HTML）不在本仓库内，不会被发布。
+
+__pycache__/

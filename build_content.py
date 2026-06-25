@@ -120,6 +120,21 @@ def process_one(folder):
     if quickref:
         page += "\n\n---\n\n" + quickref
 
+    # 顶部徽章条：模块 / 阅读时长 / 速查层
+    modname = module_of(meta)
+    plain = re.sub(r"\s+", "", re.sub(r"!\[[^\]]*\]\([^)]*\)", "", page))
+    minutes = max(1, round(len(plain) / 380))
+    qr_badge = '<span class="badge qr">🔧 含工程师速查</span>' if quickref else ""
+    meta_bar = ('<div class="article-meta">'
+                f'<span class="badge">📘 {modname}</span>'
+                f'<span class="badge">⏱ 约 {minutes} 分钟</span>'
+                f'{qr_badge}</div>\n')
+    page, n_ins = re.subn(r"^(#\s+.+)$",
+                          lambda m: m.group(1) + "\n\n" + meta_bar,
+                          page, count=1, flags=re.M)
+    if n_ins == 0:
+        page = meta_bar + page
+
     # VitePress front-matter
     fm = f"---\ntitle: {title}\noutline: [2,3]\n---\n\n"
     out_md = os.path.join(ART_OUT, f"{nn}.md")
@@ -170,19 +185,61 @@ def main():
     json.dump(sidebar, open(os.path.join(SITE, ".vitepress", "sidebar.json"),
               "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    # 首页
-    lines = ["---", "layout: doc", "title: 硬件测试科普百科", "---", "",
-             "# 硬件测试科普百科", "",
-             "> 把消费电子「硬件测试」的知识，做成一套可长期查阅、可全文搜索的完整百科。",
-             "> 每篇 = 通俗讲解 + 工程师速查（判据表 / 规格 / 设备设置 / 踩坑）。", ""]
+    # 首页（home 布局：Hero + Features 卡片 + 订阅入口）
+    BILI_URL = "https://space.bilibili.com"   # TODO: 换成你的 B 站空间链接
+
+    def icon_of(name):
+        table = [("基础", "🧰"), ("电源", "⚡"), ("PI", "⚡"), ("信号", "📡"),
+                 ("SI", "📡"), ("时序", "⏱"), ("时钟", "⏱"), ("总线", "🔌"),
+                 ("接口", "🚄"), ("高速", "🚄"), ("功耗", "🔋"), ("电池", "🔋"),
+                 ("EMC", "📶"), ("EMI", "📶"), ("ESD", "⚡"), ("热", "🌡"),
+                 ("无线", "📶"), ("射频", "📶"), ("防护", "🛡"), ("可靠", "🛡"),
+                 ("产测", "🏭")]
+        for k, v in table:
+            if k in name:
+                return v
+        return "📄"
+
+    out = ["---", "layout: home", "title: 硬件测试科普百科", "",
+           "hero:",
+           "  name: 硬件测试科普百科",
+           "  text: 把硬件测试讲透",
+           "  tagline: 消费电子硬件测试知识库 · 通俗讲解 ＋ 工程师速查 · 全文可搜",
+           "  image:",
+           "    src: /logo.svg",
+           "    alt: 硬件测试科普百科",
+           "  actions:",
+           "    - theme: brand",
+           "      text: 📖 从头开始读",
+           "      link: /articles/01",
+           "    - theme: alt",
+           "      text: 🔧 工程师速查篇",
+           "      link: /articles/13",
+           "",
+           "features:"]
     for g in order:
-        lines.append(f"## {g}")
-        lines.append("")
-        for it in [x for x in items if x["module"] == g]:
-            tag = " 🔧" if it["has_quickref"] else ""
-            lines.append(f"- [{it['nn']} · {it['title']}](/articles/{it['nn']}){tag}")
-        lines.append("")
-    open(os.path.join(SITE, "index.md"), "w", encoding="utf-8").write("\n".join(lines))
+        arts = [x for x in items if x["module"] == g]
+        shorts = " / ".join(a["short"] for a in arts[:3])
+        det = f"{len(arts)} 篇 · {shorts}"
+        out += [f"  - icon: {icon_of(g)}",
+                f"    title: {g}",
+                f"    details: {det}",
+                f"    link: /articles/{arts[0]['nn']}",
+                "    linkText: 进入模块"]
+    out += ["---", "",
+            '<div class="subscribe-row">',
+            '  <a class="site" href="/articles/01">📚 全部文章</a>',
+            f'  <a class="bili" href="{BILI_URL}" target="_blank" rel="noreferrer">📺 B 站追更</a>',
+            '  <a class="wechat" href="/about">💚 公众号「硬件研发测试」</a>',
+            "</div>", "",
+            "## 🆕 最新更新", ""]
+    for it in sorted(items, key=lambda x: x["nn"], reverse=True)[:5]:
+        tag = " 🔧" if it["has_quickref"] else ""
+        out.append(f"- [{it['nn']} · {it['title']}](/articles/{it['nn']}){tag}")
+    out += ["",
+            f"> 📈 已收录 **{len(items)}** 篇 · **{len(order)}** 个模块，持续更新中。"
+            " 🔧 = 含工程师速查（判据表 / 规格 / 设备设置 / 踩坑）。"]
+    open(os.path.join(SITE, "index.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
 
     print(f"\n完成：收录 {len(items)} 篇，模块 {len(order)} 个。")
     print("sidebar.json + index.md 已生成。")

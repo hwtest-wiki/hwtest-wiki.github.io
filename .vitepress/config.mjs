@@ -19,14 +19,31 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   ignoreDeadLinks: true,
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
+    ['meta', { name: 'theme-color', content: '#2878B5' }],
+    ['meta', { property: 'og:title', content: '硬件测试科普百科' }],
+    ['meta', { property: 'og:description', content: '消费电子硬件测试知识库：通俗讲解 + 工程师速查' }]
+  ],
   themeConfig: {
+    logo: '/logo.svg',
+    siteTitle: '硬件测试科普百科',
     nav: [
       { text: '首页', link: '/' },
-      { text: '全部文章', link: '/articles/01' }
+      {
+        text: '全部文章',
+        items: [
+          { text: '模块一 · 测试基础与方法论', link: '/articles/01' },
+          { text: '模块二 · 电源完整性 PI', link: '/articles/06' },
+          { text: '整机防护与可靠性', link: '/articles/12' }
+        ]
+      },
+      { text: '关于 / 订阅', link: '/about' }
     ],
     sidebar: {
       '/': sidebar,
-      '/articles/': sidebar
+      '/articles/': sidebar,
+      '/about': sidebar
     },
     search: {
       provider: 'local',
@@ -44,12 +61,14 @@ export default defineConfig({
     outline: { level: [2, 3], label: '本页目录' },
     docFooter: { prev: '上一篇', next: '下一篇' },
     darkModeSwitchLabel: '主题',
+    lightModeSwitchTitle: '切换到浅色',
+    darkModeSwitchTitle: '切换到深色',
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '目录',
     lastUpdatedText: '最后更新',
     footer: {
-      message: '硬件测试科普系列 · 知识沉淀',
-      copyright: '内容仅供学习参考'
+      message: '通俗讲解 + 工程师速查 · 持续更新中｜B站 & 公众号「硬件研发测试」同步',
+      copyright: '© 硬件测试科普系列 · 内容仅供学习参考'
     }
   }
 })

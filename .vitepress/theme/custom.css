@@ -1,0 +1,145 @@
+/* ===== 硬件测试科普百科 · 浅蓝品牌主题 ===== */
+
+:root {
+  /* 品牌主色：浅蓝（呼应桌面工具风格） */
+  --vp-c-brand-1: #2878B5;
+  --vp-c-brand-2: #3A9AD9;
+  --vp-c-brand-3: #2878B5;
+  --vp-c-brand-soft: rgba(58, 154, 217, 0.14);
+
+  --vp-c-brand-text: #ffffff;
+
+  /* Hero 渐变 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #2878B5 30%, #3A9AD9 70%, #56C0E0);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, rgba(40,120,181,0.25), rgba(86,192,224,0.25));
+  --vp-home-hero-image-filter: blur(48px);
+
+  /* 按钮 */
+  --vp-button-brand-bg: #2878B5;
+  --vp-button-brand-hover-bg: #3A9AD9;
+  --vp-button-brand-active-bg: #1f5f90;
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-hover-border: transparent;
+
+  /* 中文优先字体栈 */
+  --vp-font-family-base: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans CJK SC", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+.dark {
+  --vp-c-brand-1: #5FB2E6;
+  --vp-c-brand-2: #79C4F0;
+  --vp-c-brand-3: #5FB2E6;
+  --vp-c-brand-soft: rgba(95, 178, 230, 0.16);
+}
+
+/* ===== 首页 Feature 卡片：圆角 + 悬浮上浮 ===== */
+.VPFeature {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(40, 120, 181, 0.16);
+  border-color: var(--vp-c-brand-2);
+}
+.VPFeature .icon {
+  font-size: 26px;
+}
+
+/* ===== 正文表格：判据表是核心，必须好看 ===== */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-divider);
+  margin: 18px 0;
+}
+.vp-doc th {
+  background: linear-gradient(120deg, #2878B5, #3A9AD9);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+.vp-doc tr:nth-child(2n) td {
+  background: var(--vp-c-bg-soft);
+}
+.vp-doc td, .vp-doc th {
+  border-left: none;
+  border-right: none;
+  padding: 9px 14px;
+}
+
+/* ===== 正文配图：圆角 + 轻阴影 + 居中 ===== */
+.vp-doc img {
+  border-radius: 10px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+  margin: 8px auto;
+}
+
+/* ===== 引用块：左侧品牌色强调（用于"第一准则"等金句） ===== */
+.vp-doc blockquote {
+  border-left: 4px solid var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 16px;
+}
+
+/* ===== 文章页顶部「模块徽章 / 阅读时长」 ===== */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: -6px 0 22px;
+  font-size: 13px;
+}
+.article-meta .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+.article-meta .badge.qr {
+  background: rgba(245, 158, 11, 0.14);
+  color: #c2740b;
+}
+
+/* ===== 首页底部「订阅入口」按钮组 ===== */
+.subscribe-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 8px 0 4px;
+}
+.subscribe-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.subscribe-row a:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+.subscribe-row .bili { background: #FB7299; color: #fff; }
+.subscribe-row .wechat { background: #07C160; color: #fff; }
+.subscribe-row .site { background: var(--vp-c-brand-1); color: #fff; }
+
+/* ===== 链接悬浮下划线 ===== */
+.vp-doc a {
+  text-decoration-color: var(--vp-c-brand-2);
+  text-underline-offset: 3px;
+}

@@ -1,28 +1,52 @@
 ---
-layout: doc
+layout: home
 title: 硬件测试科普百科
+
+hero:
+  name: 硬件测试科普百科
+  text: 把硬件测试讲透
+  tagline: 消费电子硬件测试知识库 · 通俗讲解 ＋ 工程师速查 · 全文可搜
+  image:
+    src: /logo.svg
+    alt: 硬件测试科普百科
+  actions:
+    - theme: brand
+      text: 📖 从头开始读
+      link: /articles/01
+    - theme: alt
+      text: 🔧 工程师速查篇
+      link: /articles/13
+
+features:
+  - icon: 🧰
+    title: 模块一 · 测试基础与方法论
+    details: 5 篇 · 走进硬件测试 / 示波器入门 / 探头与接地的艺术
+    link: /articles/01
+    linkText: 进入模块
+  - icon: ⚡
+    title: 模块二 · 电源完整性 PI
+    details: 4 篇 · 电源完整性入门 / 压降与 PDN / 稳压量着 1.0V 完美达标
+    link: /articles/06
+    linkText: 进入模块
+  - icon: 🛡
+    title: 模块 · 整机防护与可靠性
+    details: 1 篇 · IP68 防水
+    link: /articles/12
+    linkText: 进入模块
 ---
 
-# 硬件测试科普百科
+<div class="subscribe-row">
+  <a class="site" href="/articles/01">📚 全部文章</a>
+  <a class="bili" href="https://space.bilibili.com" target="_blank" rel="noreferrer">📺 B 站追更</a>
+  <a class="wechat" href="/about">💚 公众号「硬件研发测试」</a>
+</div>
 
-> 把消费电子「硬件测试」的知识，做成一套可长期查阅、可全文搜索的完整百科。
-> 每篇 = 通俗讲解 + 工程师速查（判据表 / 规格 / 设备设置 / 踩坑）。
+## 🆕 最新更新
 
-## 模块一 · 测试基础与方法论
-
-- [01 · 走进硬件测试：你手里的电子产品，出厂前到底被「折磨」过多少次？](/articles/01)
-- [02 · 示波器入门：五个旋钮，一次讲透](/articles/02)
-- [03 · 探头与接地的艺术：为什么你测的总是不准](/articles/03)
-- [04 · 工程师的工具箱：万用表 / 电源 / 电子负载 / 信号源，到底怎么用](/articles/04)
-- [05 · 测量为什么会不准？误差、精度、校准与单位，一次讲透](/articles/05)
-
-## 模块二 · 电源完整性 PI
-
-- [06 · 电源完整性入门：一颗芯片，是怎么「吃」上一口干净电的？](/articles/06)
-- [07 · 压降与 PDN：电容上明明合格，芯片却「没吃饱」？](/articles/07)
-- [13 · 稳压量着 1.0V 完美达标，CPU 一满载就砸到 0.9V，芯片直接重启](/articles/13) 🔧
 - [14 · 电源没坏却"吱吱"啸叫、输出还规律抖动——稳压器怎么自己变成了振荡器？](/articles/14) 🔧
-
-## 模块 · 整机防护与可靠性
-
+- [13 · 稳压量着 1.0V 完美达标，CPU 一满载就砸到 0.9V，芯片直接重启](/articles/13) 🔧
 - [12 · IP68 防水，为什么手机掉水里还是进水了？](/articles/12) 🔧
+- [07 · 压降与 PDN：电容上明明合格，芯片却「没吃饱」？](/articles/07)
+- [06 · 电源完整性入门：一颗芯片，是怎么「吃」上一口干净电的？](/articles/06)
+
+> 📈 已收录 **10** 篇 · **3** 个模块，持续更新中。 🔧 = 含工程师速查（判据表 / 规格 / 设备设置 / 踩坑）。
