@@ -70,5 +70,15 @@
         "link": "/articles/16"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · LDO 专项",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "17 · 同样一块板",
+        "link": "/articles/17"
+      }
+    ]
   }
 ]
