@@ -122,5 +122,15 @@
         "link": "/articles/19"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · 电源保护功能",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "20 · 手册写着过流保护 3 安",
+        "link": "/articles/20"
+      }
+    ]
   }
 ]
