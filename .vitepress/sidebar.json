@@ -38,6 +38,18 @@
         "link": "/articles/07"
       },
       {
+        "text": "08 · 电源纹波和噪声测试",
+        "link": "/articles/08"
+      },
+      {
+        "text": "09 · 去耦电容加了一大把",
+        "link": "/articles/09"
+      },
+      {
+        "text": "11 · 板子供电体检",
+        "link": "/articles/11"
+      },
+      {
         "text": "13 · 稳压量着 1.0V 完美达标",
         "link": "/articles/13"
       },
@@ -48,6 +60,16 @@
       {
         "text": "15 · 标称 20W 快充",
         "link": "/articles/15"
+      }
+    ]
+  },
+  {
+    "text": "模块十一 · 显示 DISP",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "10 · 屏幕调得越暗",
+        "link": "/articles/10"
       }
     ]
   },
