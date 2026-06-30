@@ -102,5 +102,15 @@
         "link": "/articles/17"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · 上电时序",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "18 · 十二路电压全测达标",
+        "link": "/articles/18"
+      }
+    ]
   }
 ]
