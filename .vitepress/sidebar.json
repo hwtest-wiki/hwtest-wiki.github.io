@@ -112,5 +112,15 @@
         "link": "/articles/18"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · 软启动与上电浪涌",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "19 · 稳态才吃 2 安",
+        "link": "/articles/19"
+      }
+    ]
   }
 ]
