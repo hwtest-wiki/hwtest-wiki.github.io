@@ -132,5 +132,15 @@
         "link": "/articles/20"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · 掉电保持时间",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "21 · 断电后系统要 20 毫秒存数据",
+        "link": "/articles/21"
+      }
+    ]
   }
 ]
