@@ -152,5 +152,15 @@
         "link": "/articles/22"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · 开关节点振铃与过冲 · DCDC 专属",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "23 · 输入才 5V",
+        "link": "/articles/23"
+      }
+    ]
   }
 ]
