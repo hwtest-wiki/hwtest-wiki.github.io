@@ -142,5 +142,15 @@
         "link": "/articles/21"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · 静态电压精度与负载/线性调整率",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "22 · 空载量着 1.00V 完美达标",
+        "link": "/articles/22"
+      }
+    ]
   }
 ]
