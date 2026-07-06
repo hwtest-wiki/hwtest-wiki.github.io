@@ -162,5 +162,15 @@
         "link": "/articles/23"
       }
     ]
+  },
+  {
+    "text": "模块二 · 电源完整性 PI · 用 FFT 给纹波和噪声溯源 · 通用",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "24 · 纹波超标滤了一下午只降 4mV",
+        "link": "/articles/24"
+      }
+    ]
   }
 ]
