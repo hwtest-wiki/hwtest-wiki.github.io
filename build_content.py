@@ -101,8 +101,12 @@ def process_one(folder):
         return None
     meta, body = parse_front_matter(text)
     base = os.path.basename(folder)
-    mnn = re.search(r"第\s*0*(\d+)\s*篇", base + meta.get("篇号", ""))
-    nn = mnn.group(1).zfill(2) if mnn else "00"
+    bx = re.search(r"番外\s*0*(\d+)", base + meta.get("篇号", ""))
+    if bx:                                  # 实战番外：独立编号 b01/b02…
+        nn = "b" + bx.group(1).zfill(2)
+    else:
+        mnn = re.search(r"第\s*0*(\d+)\s*篇", base + meta.get("篇号", ""))
+        nn = mnn.group(1).zfill(2) if mnn else "00"
     title = meta.get("标题", "").strip() or base
 
     # 拆速查层
@@ -162,7 +166,8 @@ def main():
     for p in glob.glob(os.path.join(IMG_OUT, "*")):
         shutil.rmtree(p, ignore_errors=True)
 
-    folders = sorted(glob.glob(os.path.join(ROOT, "第*篇*")))
+    folders = sorted(glob.glob(os.path.join(ROOT, "第*篇*"))) \
+        + sorted(glob.glob(os.path.join(ROOT, "番外*")))
     items = []
     for f in folders:
         if os.path.isdir(f):
@@ -194,7 +199,7 @@ def main():
                  ("接口", "🚄"), ("高速", "🚄"), ("功耗", "🔋"), ("电池", "🔋"),
                  ("EMC", "📶"), ("EMI", "📶"), ("ESD", "⚡"), ("热", "🌡"),
                  ("无线", "📶"), ("射频", "📶"), ("防护", "🛡"), ("可靠", "🛡"),
-                 ("产测", "🏭")]
+                 ("产测", "🏭"), ("番外", "🧭"), ("实战", "🧭")]
         for k, v in table:
             if k in name:
                 return v
