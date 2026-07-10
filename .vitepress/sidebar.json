@@ -238,6 +238,16 @@
     ]
   },
   {
+    "text": "模块三 · 信号完整性 SI · 抖动 Jitter",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "32 · 抖动 Jitter",
+        "link": "/articles/32"
+      }
+    ]
+  },
+  {
     "text": "实战番外",
     "collapsed": false,
     "items": [
