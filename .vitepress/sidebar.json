@@ -316,5 +316,15 @@
         "link": "/articles/b01"
       }
     ]
+  },
+  {
+    "text": "速查地图",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "q01 · 电源芯片到手",
+        "link": "/articles/q01"
+      }
+    ]
   }
 ]

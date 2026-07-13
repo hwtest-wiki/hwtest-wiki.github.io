@@ -101,11 +101,15 @@ def process_one(folder):
         return None
     meta, body = parse_front_matter(text)
     base = os.path.basename(folder)
-    bx = re.search(r"番外\s*0*(\d+)", base + meta.get("篇号", ""))
+    key = base + meta.get("篇号", "")
+    bx = re.search(r"番外\s*0*(\d+)", key)
+    qx = re.search(r"速查\s*0*(\d+)", key)
     if bx:                                  # 实战番外：独立编号 b01/b02…
         nn = "b" + bx.group(1).zfill(2)
+    elif qx:                                # 速查地图/索引篇：独立编号 q01/q02…
+        nn = "q" + qx.group(1).zfill(2)
     else:
-        mnn = re.search(r"第\s*0*(\d+)\s*篇", base + meta.get("篇号", ""))
+        mnn = re.search(r"第\s*0*(\d+)\s*篇", key)
         nn = mnn.group(1).zfill(2) if mnn else "00"
     title = meta.get("标题", "").strip() or base
 
@@ -167,7 +171,8 @@ def main():
         shutil.rmtree(p, ignore_errors=True)
 
     folders = sorted(glob.glob(os.path.join(ROOT, "第*篇*"))) \
-        + sorted(glob.glob(os.path.join(ROOT, "番外*")))
+        + sorted(glob.glob(os.path.join(ROOT, "番外*"))) \
+        + sorted(glob.glob(os.path.join(ROOT, "速查*")))
     items = []
     for f in folders:
         if os.path.isdir(f):
@@ -194,7 +199,7 @@ def main():
     BILI_URL = "https://space.bilibili.com/1817350057"   # B 站空间
 
     def icon_of(name):
-        table = [("基础", "🧰"), ("电源", "⚡"), ("PI", "⚡"), ("信号", "📡"),
+        table = [("速查", "🧭"), ("地图", "🗺"), ("基础", "🧰"), ("电源", "⚡"), ("PI", "⚡"), ("信号", "📡"),
                  ("SI", "📡"), ("时序", "⏱"), ("时钟", "⏱"), ("总线", "🔌"),
                  ("接口", "🚄"), ("高速", "🚄"), ("功耗", "🔋"), ("电池", "🔋"),
                  ("EMC", "📶"), ("EMI", "📶"), ("ESD", "⚡"), ("热", "🌡"),
