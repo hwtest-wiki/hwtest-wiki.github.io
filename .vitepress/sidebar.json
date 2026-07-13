@@ -314,6 +314,10 @@
       {
         "text": "b01 · 如何正确提交一个测试 Bug",
         "link": "/articles/b01"
+      },
+      {
+        "text": "b02 · 测试计划与测试用例",
+        "link": "/articles/b02"
       }
     ]
   },
