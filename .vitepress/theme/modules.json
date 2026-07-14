@@ -236,6 +236,11 @@
           "nn": "38",
           "name": "一致性测试总览",
           "qr": true
+        },
+        {
+          "nn": "39",
+          "name": "TDR时域反射",
+          "qr": true
         }
       ]
     },
@@ -339,7 +344,7 @@
     }
   ],
   "stats": {
-    "articles": 42,
+    "articles": 43,
     "modules_active": 6
   }
 }
