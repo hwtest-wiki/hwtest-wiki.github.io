@@ -6,6 +6,9 @@ const sidebar = JSON.parse(
   readFileSync(fileURLToPath(new URL('./sidebar.json', import.meta.url)), 'utf-8')
 )
 
+// 「全部文章」下拉：由 sidebar 分组自动派生，随 build_content.py 输出同步。
+const allArticlesNav = sidebar.map((g) => ({ text: g.text, link: g.items[0].link }))
+
 // 部署到 GitHub Pages 项目站点时，base 需为 /<仓库名>/；本地开发为 /。
 // GitHub Actions 通过 SITE_BASE 注入（actions/configure-pages 的 base_path）。
 const rawBase = process.env.SITE_BASE || '/'
@@ -32,11 +35,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       {
         text: '全部文章',
-        items: [
-          { text: '模块一 · 测试基础与方法论', link: '/articles/01' },
-          { text: '模块二 · 电源完整性 PI', link: '/articles/06' },
-          { text: '整机防护与可靠性', link: '/articles/12' }
-        ]
+        items: allArticlesNav
       },
       { text: '关于 / 订阅', link: '/about' }
     ],

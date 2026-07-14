@@ -12,7 +12,7 @@
         "link": "/articles/02"
       },
       {
-        "text": "03 · 探头与接地的艺术",
+        "text": "03 · 探头与接地",
         "link": "/articles/03"
       },
       {
@@ -20,7 +20,7 @@
         "link": "/articles/04"
       },
       {
-        "text": "05 · 测量为什么会不准",
+        "text": "05 · 测量与校准",
         "link": "/articles/05"
       }
     ]
@@ -34,7 +34,7 @@
         "link": "/articles/06"
       },
       {
-        "text": "07 · 压降与 PDN",
+        "text": "07 · 压降与PDN",
         "link": "/articles/07"
       },
       {
@@ -42,255 +42,121 @@
         "link": "/articles/08"
       },
       {
-        "text": "09 · 去耦电容加了一大把",
+        "text": "09 · 去耦电容",
         "link": "/articles/09"
       },
       {
-        "text": "11 · 板子供电体检",
+        "text": "11 · 板级供电体检",
         "link": "/articles/11"
       },
       {
-        "text": "13 · 稳压量着 1.0V 完美达标",
+        "text": "13 · 电源瞬态响应",
         "link": "/articles/13"
       },
       {
-        "text": "14 · 电源没坏却\"吱吱\"啸叫",
+        "text": "14 · 环路稳定性",
         "link": "/articles/14"
       },
       {
-        "text": "15 · 标称 20W 快充",
+        "text": "15 · 电源效率",
         "link": "/articles/15"
       },
       {
-        "text": "25 · PDN 阻抗实测",
-        "link": "/articles/25"
-      }
-    ]
-  },
-  {
-    "text": "模块十一 · 显示 DISP",
-    "collapsed": false,
-    "items": [
-      {
-        "text": "10 · 屏幕调得越暗",
-        "link": "/articles/10"
-      }
-    ]
-  },
-  {
-    "text": "模块 · 整机防护与可靠性",
-    "collapsed": false,
-    "items": [
-      {
-        "text": "12 · IP68 防水",
-        "link": "/articles/12"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 家族总览",
-    "collapsed": false,
-    "items": [
-      {
-        "text": "16 · 拆开手机主板",
+        "text": "16 · 电源IC家族",
         "link": "/articles/16"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · LDO 专项",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "17 · 同样一块板",
+        "text": "17 · LDO专项",
         "link": "/articles/17"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 上电时序",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "18 · 十二路电压全测达标",
+        "text": "18 · 上电时序与单调性",
         "link": "/articles/18"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 软启动与上电浪涌",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "19 · 稳态才吃 2 安",
+        "text": "19 · 软启动与上电浪涌",
         "link": "/articles/19"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 电源保护功能",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "20 · 手册写着过流保护 3 安",
+        "text": "20 · 电源四大保护",
         "link": "/articles/20"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 掉电保持时间",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "21 · 断电后系统要 20 毫秒存数据",
+        "text": "21 · 掉电保持时间",
         "link": "/articles/21"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 静态电压精度与负载/线性调整率",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "22 · 空载量着 1.00V 完美达标",
+        "text": "22 · 静态精度与调整率",
         "link": "/articles/22"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 开关节点振铃与过冲 · DCDC 专属",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "23 · 输入才 5V",
+        "text": "23 · 开关节点振铃",
         "link": "/articles/23"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 用 FFT 给纹波和噪声溯源 · 通用",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "24 · 纹波超标滤了一下午只降 4mV",
+        "text": "24 · FFT噪声溯源",
         "link": "/articles/24"
-      }
-    ]
-  },
-  {
-    "text": "模块二 · 电源完整性 PI · 收官",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "26 · Load Switch 专项",
+        "text": "25 · PDN阻抗实测",
+        "link": "/articles/25"
+      },
+      {
+        "text": "26 · Load Switch专项",
         "link": "/articles/26"
       }
     ]
   },
   {
-    "text": "模块三 · 信号完整性 SI · 开篇",
+    "text": "模块三 · 信号完整性 SI",
     "collapsed": false,
     "items": [
       {
         "text": "27 · 信号完整性入门",
         "link": "/articles/27"
-      }
-    ]
-  },
-  {
-    "text": "模块三 · 信号完整性 SI · 反射与端接",
-    "collapsed": false,
-    "items": [
+      },
       {
         "text": "28 · 阻抗匹配与端接",
         "link": "/articles/28"
-      }
-    ]
-  },
-  {
-    "text": "模块三 · 信号完整性 SI · 上升时间/边沿/带宽",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "29 · 上升时间",
+        "text": "29 · 上升时间边沿与带宽",
         "link": "/articles/29"
-      }
-    ]
-  },
-  {
-    "text": "模块三 · 信号完整性 SI · 串扰 crosstalk",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "30 · 串扰 crosstalk",
+        "text": "30 · 串扰",
         "link": "/articles/30"
-      }
-    ]
-  },
-  {
-    "text": "模块三 · 信号完整性 SI · 眼图 eye diagram",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "31 · 眼图 eye diagram",
+        "text": "31 · 眼图",
         "link": "/articles/31"
-      }
-    ]
-  },
-  {
-    "text": "模块三 · 信号完整性 SI · 抖动 Jitter",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "32 · 抖动 Jitter",
+        "text": "32 · 抖动",
         "link": "/articles/32"
-      }
-    ]
-  },
-  {
-    "text": "模块三 · 信号完整性 SI · S 参数 / 插入损耗 / 回波损耗",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "33 · S 参数",
+        "text": "33 · S参数",
         "link": "/articles/33"
-      }
-    ]
-  },
-  {
-    "text": "模块三 · 信号完整性 SI · 均衡 EQ / 预加重 / 去加重 / CTLE / DFE",
-    "collapsed": false,
-    "items": [
+      },
       {
-        "text": "34 · 均衡 EQ",
+        "text": "34 · 均衡EQ",
         "link": "/articles/34"
       }
     ]
   },
   {
-    "text": "模块四 · 时序与时钟 · 时序基础 / 建立时间 / 保持时间",
+    "text": "模块四 · 时序与时钟",
     "collapsed": false,
     "items": [
       {
-        "text": "35 · 建立时间与保持时间",
+        "text": "35 · 时序基础",
         "link": "/articles/35"
-      }
-    ]
-  },
-  {
-    "text": "模块四 · 时序与时钟 · 时钟测试 / 频率 / 占空比 / 抖动 / 相位噪声",
-    "collapsed": false,
-    "items": [
+      },
       {
         "text": "36 · 时钟测试",
         "link": "/articles/36"
-      }
-    ]
-  },
-  {
-    "text": "模块四 · 时序与时钟 · 复位与上电时序 · 模块收官",
-    "collapsed": false,
-    "items": [
+      },
       {
         "text": "37 · 复位与上电时序",
         "link": "/articles/37"
@@ -298,21 +164,35 @@
     ]
   },
   {
-    "text": "模块六 · 高速接口一致性测试 · 总览桥梁篇 · 模块开篇",
+    "text": "模块六 · 高速总线 / 接口",
     "collapsed": false,
     "items": [
       {
-        "text": "38 · 一致性测试到底是什么",
+        "text": "38 · 一致性测试总览",
         "link": "/articles/38"
       }
     ]
   },
   {
-    "text": "实战番外",
+    "text": "模块十一 · 整机 · 可靠性 · 产测",
     "collapsed": false,
     "items": [
       {
-        "text": "b01 · 如何正确提交一个测试 Bug",
+        "text": "10 · 屏幕频闪护眼",
+        "link": "/articles/10"
+      },
+      {
+        "text": "12 · 防水测试",
+        "link": "/articles/12"
+      }
+    ]
+  },
+  {
+    "text": "番外 · 实战番外",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "b01 · 如何提交测试Bug",
         "link": "/articles/b01"
       },
       {
@@ -326,11 +206,11 @@
     ]
   },
   {
-    "text": "速查地图",
+    "text": "速查 · 速查地图",
     "collapsed": false,
     "items": [
       {
-        "text": "q01 · 电源芯片到手",
+        "text": "q01 · 电源器件测试地图",
         "link": "/articles/q01"
       }
     ]

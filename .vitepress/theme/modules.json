@@ -1,0 +1,345 @@
+{
+  "modules": [
+    {
+      "key": 1,
+      "badge": "模块一",
+      "title": "测试基础与方法论",
+      "icon": "🧰",
+      "status": "active",
+      "note": "",
+      "articles": [
+        {
+          "nn": "01",
+          "name": "走进硬件测试",
+          "qr": false
+        },
+        {
+          "nn": "02",
+          "name": "示波器入门",
+          "qr": false
+        },
+        {
+          "nn": "03",
+          "name": "探头与接地",
+          "qr": false
+        },
+        {
+          "nn": "04",
+          "name": "工程师的工具箱",
+          "qr": false
+        },
+        {
+          "nn": "05",
+          "name": "测量与校准",
+          "qr": false
+        }
+      ]
+    },
+    {
+      "key": 2,
+      "badge": "模块二",
+      "title": "电源完整性 PI",
+      "icon": "⚡",
+      "status": "active",
+      "note": "",
+      "articles": [
+        {
+          "nn": "06",
+          "name": "电源完整性入门",
+          "qr": false
+        },
+        {
+          "nn": "07",
+          "name": "压降与PDN",
+          "qr": false
+        },
+        {
+          "nn": "08",
+          "name": "电源纹波和噪声测试",
+          "qr": false
+        },
+        {
+          "nn": "09",
+          "name": "去耦电容",
+          "qr": false
+        },
+        {
+          "nn": "11",
+          "name": "板级供电体检",
+          "qr": false
+        },
+        {
+          "nn": "13",
+          "name": "电源瞬态响应",
+          "qr": true
+        },
+        {
+          "nn": "14",
+          "name": "环路稳定性",
+          "qr": true
+        },
+        {
+          "nn": "15",
+          "name": "电源效率",
+          "qr": true
+        },
+        {
+          "nn": "16",
+          "name": "电源IC家族",
+          "qr": true
+        },
+        {
+          "nn": "17",
+          "name": "LDO专项",
+          "qr": true
+        },
+        {
+          "nn": "18",
+          "name": "上电时序与单调性",
+          "qr": true
+        },
+        {
+          "nn": "19",
+          "name": "软启动与上电浪涌",
+          "qr": true
+        },
+        {
+          "nn": "20",
+          "name": "电源四大保护",
+          "qr": true
+        },
+        {
+          "nn": "21",
+          "name": "掉电保持时间",
+          "qr": true
+        },
+        {
+          "nn": "22",
+          "name": "静态精度与调整率",
+          "qr": true
+        },
+        {
+          "nn": "23",
+          "name": "开关节点振铃",
+          "qr": true
+        },
+        {
+          "nn": "24",
+          "name": "FFT噪声溯源",
+          "qr": true
+        },
+        {
+          "nn": "25",
+          "name": "PDN阻抗实测",
+          "qr": true
+        },
+        {
+          "nn": "26",
+          "name": "Load Switch专项",
+          "qr": true
+        }
+      ]
+    },
+    {
+      "key": 3,
+      "badge": "模块三",
+      "title": "信号完整性 SI",
+      "icon": "📡",
+      "status": "active",
+      "note": "",
+      "articles": [
+        {
+          "nn": "27",
+          "name": "信号完整性入门",
+          "qr": true
+        },
+        {
+          "nn": "28",
+          "name": "阻抗匹配与端接",
+          "qr": true
+        },
+        {
+          "nn": "29",
+          "name": "上升时间边沿与带宽",
+          "qr": true
+        },
+        {
+          "nn": "30",
+          "name": "串扰",
+          "qr": true
+        },
+        {
+          "nn": "31",
+          "name": "眼图",
+          "qr": true
+        },
+        {
+          "nn": "32",
+          "name": "抖动",
+          "qr": true
+        },
+        {
+          "nn": "33",
+          "name": "S参数",
+          "qr": true
+        },
+        {
+          "nn": "34",
+          "name": "均衡EQ",
+          "qr": true
+        }
+      ]
+    },
+    {
+      "key": 4,
+      "badge": "模块四",
+      "title": "时序与时钟",
+      "icon": "⏱",
+      "status": "active",
+      "note": "",
+      "articles": [
+        {
+          "nn": "35",
+          "name": "时序基础",
+          "qr": true
+        },
+        {
+          "nn": "36",
+          "name": "时钟测试",
+          "qr": true
+        },
+        {
+          "nn": "37",
+          "name": "复位与上电时序",
+          "qr": true
+        }
+      ]
+    },
+    {
+      "key": 5,
+      "badge": "模块五",
+      "title": "低速总线",
+      "icon": "🔌",
+      "status": "planned",
+      "note": "I2C / SPI / UART 等低速总线读写与一致性",
+      "articles": []
+    },
+    {
+      "key": 6,
+      "badge": "模块六",
+      "title": "高速总线 / 接口",
+      "icon": "🚄",
+      "status": "active",
+      "note": "",
+      "articles": [
+        {
+          "nn": "38",
+          "name": "一致性测试总览",
+          "qr": true
+        }
+      ]
+    },
+    {
+      "key": 7,
+      "badge": "模块七",
+      "title": "功耗与电池",
+      "icon": "🔋",
+      "status": "planned",
+      "note": "静态 / 动态功耗 · 续航 · 快充 · 电量计",
+      "articles": []
+    },
+    {
+      "key": 8,
+      "badge": "模块八",
+      "title": "EMC / EMI / ESD",
+      "icon": "📶",
+      "status": "planned",
+      "note": "辐射 / 传导 · 静电防护 · 浪涌（决定能否上市）",
+      "articles": []
+    },
+    {
+      "key": 9,
+      "badge": "模块九",
+      "title": "热设计与热测试",
+      "icon": "🌡",
+      "status": "planned",
+      "note": "温升 / 热阻 / 热成像 · 降频与热保护",
+      "articles": []
+    },
+    {
+      "key": 10,
+      "badge": "模块十",
+      "title": "无线与射频",
+      "icon": "📶",
+      "status": "planned",
+      "note": "功率 / 频偏 / EVM · WiFi / 蓝牙 · 天线 OTA",
+      "articles": []
+    },
+    {
+      "key": 11,
+      "badge": "模块十一",
+      "title": "整机 · 可靠性 · 产测",
+      "icon": "🛡",
+      "status": "active",
+      "note": "跌落 / 高低温 / 振动 / 老化 · 量产 DFT",
+      "articles": [
+        {
+          "nn": "10",
+          "name": "屏幕频闪护眼",
+          "qr": false
+        },
+        {
+          "nn": "12",
+          "name": "防水测试",
+          "qr": true
+        }
+      ]
+    }
+  ],
+  "extra": [
+    {
+      "key": "bonus",
+      "badge": "番外",
+      "title": "实战番外",
+      "icon": "🧭",
+      "status": "active",
+      "note": "技术之外、同样决定专业度的实战功夫",
+      "articles": [
+        {
+          "nn": "b01",
+          "name": "如何提交测试Bug",
+          "qr": true
+        },
+        {
+          "nn": "b02",
+          "name": "测试计划与测试用例",
+          "qr": true
+        },
+        {
+          "nn": "b03",
+          "name": "物料替换与回归测试",
+          "qr": true
+        }
+      ]
+    },
+    {
+      "key": "quick",
+      "badge": "速查",
+      "title": "速查地图",
+      "icon": "🗺",
+      "status": "active",
+      "note": "把某类测试项编成一张速查矩阵",
+      "articles": [
+        {
+          "nn": "q01",
+          "name": "电源器件测试地图",
+          "qr": true
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "articles": 42,
+    "modules_active": 6
+  }
+}

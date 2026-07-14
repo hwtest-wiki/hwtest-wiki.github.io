@@ -82,6 +82,49 @@ def module_of(meta):
     return "其他"
 
 
+# ===== 知识地图：权威模块骨架（含尚未开发的置灰占位）=====
+CN_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6,
+          "七": 7, "八": 8, "九": 9, "十": 10, "十一": 11}
+NUM_CN = {v: k for k, v in CN_NUM.items()}
+
+# num, 显示名, icon, 规划说明（未开发时显示在置灰卡片上）
+MODULE_SKELETON = [
+    (1,  "测试基础与方法论", "🧰", ""),
+    (2,  "电源完整性 PI",    "⚡", ""),
+    (3,  "信号完整性 SI",    "📡", ""),
+    (4,  "时序与时钟",       "⏱", ""),
+    (5,  "低速总线",         "🔌", "I2C / SPI / UART 等低速总线读写与一致性"),
+    (6,  "高速总线 / 接口",   "🚄", ""),
+    (7,  "功耗与电池",       "🔋", "静态 / 动态功耗 · 续航 · 快充 · 电量计"),
+    (8,  "EMC / EMI / ESD",  "📶", "辐射 / 传导 · 静电防护 · 浪涌（决定能否上市）"),
+    (9,  "热设计与热测试",   "🌡", "温升 / 热阻 / 热成像 · 降频与热保护"),
+    (10, "无线与射频",       "📶", "功率 / 频偏 / EVM · WiFi / 蓝牙 · 天线 OTA"),
+    (11, "整机 · 可靠性 · 产测", "🛡", "跌落 / 高低温 / 振动 / 老化 · 量产 DFT"),
+]
+# key, 显示名, icon, 说明
+EXTRA_SKELETON = [
+    ("bonus", "实战番外", "🧭", "技术之外、同样决定专业度的实战功夫"),
+    ("quick", "速查地图", "🗺", "把某类测试项编成一张速查矩阵"),
+]
+# 个别篇的模块归属修正（篇号写法历史遗留）：nn -> 模块号
+MODULE_OVERRIDE = {"10": 11, "12": 11}
+
+
+def module_num_of(meta, nn):
+    """返回该篇所属模块键：整数 1-11 / 'bonus' / 'quick' / 99(兜底未归类)。"""
+    if nn.startswith("b"):
+        return "bonus"
+    if nn.startswith("q"):
+        return "quick"
+    if nn in MODULE_OVERRIDE:
+        return MODULE_OVERRIDE[nn]
+    s = meta.get("篇号", "")
+    m = re.search(r"模块\s*([一二三四五六七八九十]+)", s)
+    if m and m.group(1) in CN_NUM:
+        return CN_NUM[m.group(1)]
+    return 99
+
+
 def short_title(t):
     # 取主词做侧边栏短标题
     t = re.split(r"[：:？！?!]", t)[0]
@@ -157,8 +200,11 @@ def process_one(folder):
             for p in glob.glob(os.path.join(src_img, f"*.{ext}")):
                 shutil.copy2(p, dst)
 
+    fshort = re.sub(r"^(第\s*\d+\s*篇|番外\s*\d+|速查\s*\d+)[ _\-]*", "", base).strip()
     return {"nn": nn, "title": title, "short": short_title(title),
-            "module": module_of(meta), "has_quickref": bool(quickref)}
+            "fshort": fshort or short_title(title),
+            "module": module_of(meta), "modkey": module_num_of(meta, nn),
+            "has_quickref": bool(quickref)}
 
 
 def main():
@@ -182,33 +228,56 @@ def main():
                 print(f"  收录 {r['nn']} · {r['title']}  (速查层={r['has_quickref']})")
     items.sort(key=lambda x: x["nn"])
 
-    # 侧边栏：按模块分组，保持首次出现顺序
-    groups, order = {}, []
-    for it in items:
-        g = it["module"]
-        if g not in groups:
-            groups[g] = []
-            order.append(g)
-        groups[g].append({"text": f"{it['nn']} · {it['short']}",
-                          "link": f"/articles/{it['nn']}"})
-    sidebar = [{"text": g, "collapsed": False, "items": groups[g]} for g in order]
+    # ===== 按权威模块骨架归类，生成知识地图数据 modules.json =====
+    def articles_of(modkey):
+        arts = sorted((it for it in items if it["modkey"] == modkey),
+                      key=lambda x: x["nn"])
+        return [{"nn": a["nn"], "name": a["fshort"], "qr": a["has_quickref"]}
+                for a in arts]
+
+    modules_json = []
+    for num, title, icon, note in MODULE_SKELETON:
+        arts = articles_of(num)
+        modules_json.append({
+            "key": num, "badge": "模块" + NUM_CN[num], "title": title,
+            "icon": icon, "status": "active" if arts else "planned",
+            "note": note, "articles": arts})
+    extra_json = []
+    for key, title, icon, note in EXTRA_SKELETON:
+        arts = articles_of(key)
+        extra_json.append({
+            "key": key, "badge": {"bonus": "番外", "quick": "速查"}[key],
+            "title": title, "icon": icon,
+            "status": "active" if arts else "planned",
+            "note": note, "articles": arts})
+
+    classified = sum(len(m["articles"]) for m in modules_json + extra_json)
+    if classified != len(items):
+        known = {m["key"] for m in modules_json} | {"bonus", "quick"}
+        miss = [it["nn"] for it in items if it["modkey"] not in known]
+        print("⚠️ 未归类篇（请检查篇号）:", miss)
+
+    active_mods = sum(1 for m in modules_json if m["status"] == "active")
+    data = {"modules": modules_json, "extra": extra_json,
+            "stats": {"articles": len(items), "modules_active": active_mods}}
+    json.dump(data, open(os.path.join(SITE, ".vitepress", "theme", "modules.json"),
+              "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+
+    # ===== 侧边栏：按模块骨架顺序，仅列已上线模块 =====
+    sidebar = []
+    for m in modules_json + extra_json:
+        if m["status"] != "active":
+            continue
+        sidebar.append({
+            "text": m["badge"] + " · " + m["title"], "collapsed": False,
+            "items": [{"text": f'{a["nn"]} · {a["name"]}',
+                       "link": f'/articles/{a["nn"]}'} for a in m["articles"]]})
     json.dump(sidebar, open(os.path.join(SITE, ".vitepress", "sidebar.json"),
               "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    # 首页（home 布局：Hero + Features 卡片 + 订阅入口）
+    # ===== 首页：Hero + 知识地图组件 + 订阅 + 最新更新 =====
     BILI_URL = "https://space.bilibili.com/1817350057"   # B 站空间
-
-    def icon_of(name):
-        table = [("速查", "🧭"), ("地图", "🗺"), ("基础", "🧰"), ("电源", "⚡"), ("PI", "⚡"), ("信号", "📡"),
-                 ("SI", "📡"), ("时序", "⏱"), ("时钟", "⏱"), ("总线", "🔌"),
-                 ("接口", "🚄"), ("高速", "🚄"), ("功耗", "🔋"), ("电池", "🔋"),
-                 ("EMC", "📶"), ("EMI", "📶"), ("ESD", "⚡"), ("热", "🌡"),
-                 ("无线", "📶"), ("射频", "📶"), ("防护", "🛡"), ("可靠", "🛡"),
-                 ("产测", "🏭"), ("番外", "🧭"), ("实战", "🧭")]
-        for k, v in table:
-            if k in name:
-                return v
-        return "📄"
+    qnn = next((a["nn"] for a in articles_of("quick")), "01")
 
     out = ["---", "layout: home", "title: 硬件测试科普百科", "",
            "hero:",
@@ -223,36 +292,25 @@ def main():
            "      text: 📖 从头开始读",
            "      link: /articles/01",
            "    - theme: alt",
-           "      text: 🔧 工程师速查篇",
-           "      link: /articles/13",
-           "",
-           "features:"]
-    for g in order:
-        arts = [x for x in items if x["module"] == g]
-        shorts = " / ".join(a["short"] for a in arts[:3])
-        det = f"{len(arts)} 篇 · {shorts}"
-        out += [f"  - icon: {icon_of(g)}",
-                f"    title: {g}",
-                f"    details: {det}",
-                f"    link: /articles/{arts[0]['nn']}",
-                "    linkText: 进入模块"]
-    out += ["---", "",
-            '<div class="subscribe-row">',
-            '  <a class="site" href="/articles/01">📚 全部文章</a>',
-            f'  <a class="bili" href="{BILI_URL}" target="_blank" rel="noreferrer">📺 B 站追更</a>',
-            '  <a class="wechat" href="/about">💚 公众号「硬件研发测试」</a>',
-            "</div>", "",
-            "## 🆕 最新更新", ""]
-    for it in sorted(items, key=lambda x: x["nn"], reverse=True)[:5]:
+           "      text: 🔧 工程师速查",
+           f"      link: /articles/{qnn}",
+           "---", "",
+           "<HomeMap />", "",
+           '<div class="subscribe-row">',
+           '  <a class="site" href="/articles/01">📚 全部文章</a>',
+           f'  <a class="bili" href="{BILI_URL}" target="_blank" rel="noreferrer">📺 B 站追更</a>',
+           '  <a class="wechat" href="/about">💚 公众号「硬件研发测试」</a>',
+           "</div>", "",
+           "## 🆕 最新更新", ""]
+    for it in sorted(items, key=lambda x: x["nn"], reverse=True)[:6]:
         tag = " 🔧" if it["has_quickref"] else ""
         out.append(f"- [{it['nn']} · {it['title']}](/articles/{it['nn']}){tag}")
-    out += ["",
-            f"> 📈 已收录 **{len(items)}** 篇 · **{len(order)}** 个模块，持续更新中。"
-            " 🔧 = 含工程师速查（判据表 / 规格 / 设备设置 / 踩坑）。"]
-    open(os.path.join(SITE, "index.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
+    open(os.path.join(SITE, "index.md"), "w",
+         encoding="utf-8").write("\n".join(out) + "\n")
 
-    print(f"\n完成：收录 {len(items)} 篇，模块 {len(order)} 个。")
-    print("sidebar.json + index.md 已生成。")
+    print(f"\n完成：收录 {len(items)} 篇，已上线模块 {active_mods} 个"
+          f"（骨架 {len(MODULE_SKELETON)} + 番外/速查）。")
+    print("modules.json + sidebar.json + index.md 已生成。")
 
 
 if __name__ == "__main__":

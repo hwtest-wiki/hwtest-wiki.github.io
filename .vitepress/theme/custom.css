@@ -143,3 +143,174 @@
   text-decoration-color: var(--vp-c-brand-2);
   text-underline-offset: 3px;
 }
+
+/* ===================================================================
+   知识地图首页（HomeMap.vue）
+   =================================================================== */
+.km {
+  max-width: 1200px;
+  margin: 8px auto 40px;
+  padding: 0 24px;
+}
+.km-head { text-align: center; margin: 8px 0 26px; }
+.km-h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  border: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #2878B5 30%, #3A9AD9 70%, #56C0E0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.km-sub { color: var(--vp-c-text-2); font-size: 14px; margin: 0; }
+.km-sub b { color: var(--vp-c-brand-1); }
+.km-legend {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 9px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.14);
+  color: #c2740b;
+  font-size: 12px;
+}
+.km-legend i { font-style: normal; }
+
+/* masonry 布局：列填充避免高矮模块留白 */
+.km-grid {
+  columns: 360px 3;
+  column-gap: 20px;
+}
+.km-mod {
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 15px 16px 13px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg-soft);
+  transition: box-shadow 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+.km-mod:hover {
+  border-color: var(--vp-c-brand-2);
+  box-shadow: 0 10px 26px rgba(40, 120, 181, 0.12);
+}
+
+.km-mod-h {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.km-ico { font-size: 20px; line-height: 1; }
+.km-badge {
+  flex: none;
+  padding: 2px 9px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(120deg, #2878B5, #3A9AD9);
+}
+.km-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  letter-spacing: 0.2px;
+}
+.km-cnt {
+  flex: none;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+.km-soon {
+  flex: none;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-c-text-3);
+  background: var(--vp-c-bg-mute);
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.km-caps { display: flex; flex-wrap: wrap; gap: 8px; }
+.km-cap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 5px 10px 5px 6px;
+  border-radius: 999px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  transition: all 0.16s ease;
+}
+.km-cap:hover {
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-brand-soft);
+  transform: translateY(-2px);
+}
+.km-nn {
+  flex: none;
+  min-width: 22px;
+  text-align: center;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--vp-c-brand-1);
+}
+.km-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 15em;
+}
+.km-qr { font-style: normal; font-size: 12px; flex: none; }
+
+/* 番外 / 速查：琥珀色点缀，区别于正篇模块 */
+.km-mod.is-extra .km-badge { background: linear-gradient(120deg, #E08A1E, #F5A623); }
+.km-mod.is-extra .km-nn { background: #E08A1E; }
+.km-mod.is-extra .km-cnt { color: #b06d10; background: rgba(245, 166, 35, 0.14); }
+.km-mod.is-extra:hover { border-color: #F5A623; box-shadow: 0 10px 26px rgba(224, 138, 30, 0.14); }
+
+/* 规划中：置灰占位，明确"骨架已排、内容在路上" */
+.km-mod.is-planned {
+  background: transparent;
+  border-style: dashed;
+  opacity: 0.72;
+}
+.km-mod.is-planned:hover {
+  border-color: var(--vp-c-divider);
+  box-shadow: none;
+  opacity: 0.9;
+}
+.km-mod.is-planned .km-badge {
+  background: none;
+  color: var(--vp-c-text-3);
+  border: 1px solid var(--vp-c-divider);
+}
+.km-mod.is-planned .km-title { color: var(--vp-c-text-2); }
+.km-note { margin: 0; font-size: 13px; color: var(--vp-c-text-3); line-height: 1.6; }
+
+@media (max-width: 640px) {
+  .km { padding: 0 16px; }
+  .km-grid { columns: 1; }
+}
