@@ -246,6 +246,11 @@
           "nn": "40",
           "name": "USB2.0眼图模板",
           "qr": true
+        },
+        {
+          "nn": "41",
+          "name": "USB3.x超速",
+          "qr": true
         }
       ]
     },
@@ -354,7 +359,7 @@
     }
   ],
   "stats": {
-    "articles": 45,
+    "articles": 46,
     "modules_active": 6
   }
 }
