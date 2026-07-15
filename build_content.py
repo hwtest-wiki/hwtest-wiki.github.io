@@ -301,6 +301,17 @@ def main():
            f'  <a class="bili" href="{BILI_URL}" target="_blank" rel="noreferrer">📺 B 站追更</a>',
            '  <a class="wechat" href="/about">💚 公众号「硬件研发测试」</a>',
            "</div>", "",
+           "## 📥 配套模板下载", "",
+           '<div class="download-row">',
+           '  <a class="dl-card" href="/downloads/hw_test_plan_template.xlsx" download>'
+           '<span class="dl-ico">📊</span>'
+           '<span class="dl-body"><strong>硬件测试计划 + 用例模板</strong>'
+           '<em>含 TPS54331 范本 · 空白模板换任何 IC 直接套 · .xlsx</em></span></a>',
+           '  <a class="dl-card" href="/downloads/hw_material_change_template.xlsx" download>'
+           '<span class="dl-ico">🔄</span>'
+           '<span class="dl-body"><strong>物料替换 + 回归测试模板</strong>'
+           '<em>替代料评估 / 回归清单 · .xlsx</em></span></a>',
+           "</div>", "",
            "## 🆕 最新更新", ""]
     for it in sorted(items, key=lambda x: x["nn"], reverse=True)[:6]:
         tag = " 🔧" if it["has_quickref"] else ""
