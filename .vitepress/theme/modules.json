@@ -324,6 +324,11 @@
           "nn": "b03",
           "name": "物料替换与回归测试",
           "qr": true
+        },
+        {
+          "nn": "b04",
+          "name": "AI搭硬件测试自动化",
+          "qr": true
         }
       ]
     },
@@ -344,7 +349,7 @@
     }
   ],
   "stats": {
-    "articles": 43,
+    "articles": 44,
     "modules_active": 6
   }
 }
