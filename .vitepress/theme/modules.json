@@ -241,6 +241,11 @@
           "nn": "39",
           "name": "TDR时域反射",
           "qr": true
+        },
+        {
+          "nn": "40",
+          "name": "USB2.0眼图模板",
+          "qr": true
         }
       ]
     },
@@ -349,7 +354,7 @@
     }
   ],
   "stats": {
-    "articles": 44,
+    "articles": 45,
     "modules_active": 6
   }
 }
