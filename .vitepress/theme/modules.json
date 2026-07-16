@@ -256,6 +256,11 @@
           "nn": "42",
           "name": "USB-C与USB_PD",
           "qr": true
+        },
+        {
+          "nn": "43",
+          "name": "HDMI",
+          "qr": true
         }
       ]
     },
@@ -374,7 +379,7 @@
     }
   ],
   "stats": {
-    "articles": 49,
+    "articles": 50,
     "modules_active": 6
   }
 }
