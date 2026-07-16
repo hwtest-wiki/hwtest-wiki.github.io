@@ -261,6 +261,11 @@
           "nn": "43",
           "name": "HDMI",
           "qr": true
+        },
+        {
+          "nn": "44",
+          "name": "DisplayPort",
+          "qr": true
         }
       ]
     },
@@ -379,7 +384,7 @@
     }
   ],
   "stats": {
-    "articles": 50,
+    "articles": 51,
     "modules_active": 6
   }
 }
