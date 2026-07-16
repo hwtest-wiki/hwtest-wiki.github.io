@@ -266,6 +266,11 @@
           "nn": "44",
           "name": "DisplayPort",
           "qr": true
+        },
+        {
+          "nn": "45",
+          "name": "UFS",
+          "qr": true
         }
       ]
     },
@@ -384,7 +389,7 @@
     }
   ],
   "stats": {
-    "articles": 51,
+    "articles": 52,
     "modules_active": 6
   }
 }
