@@ -339,6 +339,11 @@
           "nn": "b04",
           "name": "AI搭硬件测试自动化",
           "qr": true
+        },
+        {
+          "nn": "b05",
+          "name": "失效分析与故障定位",
+          "qr": true
         }
       ]
     },
@@ -359,7 +364,7 @@
     }
   ],
   "stats": {
-    "articles": 46,
+    "articles": 47,
     "modules_active": 6
   }
 }

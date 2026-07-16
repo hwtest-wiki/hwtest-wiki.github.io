@@ -31,13 +31,14 @@ hero:
 <div class="download-row">
   <a class="dl-card" href="/downloads/hw_test_plan_template.xlsx" download><span class="dl-ico">📊</span><span class="dl-body"><strong>硬件测试计划 + 用例模板</strong><em>含 TPS54331 范本 · 空白模板换任何 IC 直接套 · .xlsx</em></span></a>
   <a class="dl-card" href="/downloads/hw_material_change_template.xlsx" download><span class="dl-ico">🔄</span><span class="dl-body"><strong>物料替换 + 回归测试模板</strong><em>替代料评估 / 回归清单 · .xlsx</em></span></a>
+  <a class="dl-card" href="/downloads/hw_8d_fa_template.xlsx" download><span class="dl-ico">🔍</span><span class="dl-body"><strong>8D 失效分析报告模板</strong><em>含 TPS54331 偶发欠压复位范本 · 鱼骨图/5Why/双向确认 · .xlsx</em></span></a>
 </div>
 
 ## 🆕 最新更新
 
 - [q01 · 电源芯片到手，先测哪几项？DCDC / LDO / Load Switch / PMIC 测试地图](/articles/q01) 🔧
+- [b05 · 失效分析与故障定位：板子"偶尔"会重启，怎么揪出真凶？](/articles/b05) 🔧
 - [b04 · 手测 VS AI 测：同一块板的 I2C 信号质量，手测一下午，AI 搭的工具几分钟出报告](/articles/b04) 🔧
 - [b03 · 物料替换与回归测试：脚一样的替代料，为什么一换就批量重启](/articles/b03) 🔧
 - [b02 · 测试计划与测试用例：测了两周的芯片，量产为什么还批量重启](/articles/b02) 🔧
 - [b01 · 如何正确提交一个测试 Bug：从发现到关闭，硬件测试的完整闭环](/articles/b01) 🔧
-- [41 · 同样是 USB，为什么 10G 的眼图在示波器上直接是「闭」的？——USB 3.x 超速，一致性测试真正的深水区](/articles/41) 🔧

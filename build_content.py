@@ -311,6 +311,10 @@ def main():
            '<span class="dl-ico">🔄</span>'
            '<span class="dl-body"><strong>物料替换 + 回归测试模板</strong>'
            '<em>替代料评估 / 回归清单 · .xlsx</em></span></a>',
+           '  <a class="dl-card" href="/downloads/hw_8d_fa_template.xlsx" download>'
+           '<span class="dl-ico">🔍</span>'
+           '<span class="dl-body"><strong>8D 失效分析报告模板</strong>'
+           '<em>含 TPS54331 偶发欠压复位范本 · 鱼骨图/5Why/双向确认 · .xlsx</em></span></a>',
            "</div>", "",
            "## 🆕 最新更新", ""]
     for it in sorted(items, key=lambda x: x["nn"], reverse=True)[:6]:
