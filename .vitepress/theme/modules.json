@@ -364,12 +364,17 @@
           "nn": "q01",
           "name": "电源器件测试地图",
           "qr": true
+        },
+        {
+          "nn": "q02",
+          "name": "串行高速接口全景地图",
+          "qr": true
         }
       ]
     }
   ],
   "stats": {
-    "articles": 48,
+    "articles": 49,
     "modules_active": 6
   }
 }
