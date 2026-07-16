@@ -251,6 +251,11 @@
           "nn": "41",
           "name": "USB3.x超速",
           "qr": true
+        },
+        {
+          "nn": "42",
+          "name": "USB-C与USB_PD",
+          "qr": true
         }
       ]
     },
@@ -364,7 +369,7 @@
     }
   ],
   "stats": {
-    "articles": 47,
+    "articles": 48,
     "modules_active": 6
   }
 }
