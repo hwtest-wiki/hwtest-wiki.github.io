@@ -281,6 +281,11 @@
           "nn": "47",
           "name": "PCIe",
           "qr": true
+        },
+        {
+          "nn": "48",
+          "name": "DDR",
+          "qr": true
         }
       ]
     },
@@ -399,7 +404,7 @@
     }
   ],
   "stats": {
-    "articles": 54,
+    "articles": 55,
     "modules_active": 6
   }
 }
