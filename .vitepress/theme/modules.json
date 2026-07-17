@@ -220,9 +220,15 @@
       "badge": "模块五",
       "title": "低速总线",
       "icon": "🔌",
-      "status": "planned",
+      "status": "active",
       "note": "I2C / SPI / UART 等低速总线读写与一致性",
-      "articles": []
+      "articles": [
+        {
+          "nn": "51",
+          "name": "I2C",
+          "qr": true
+        }
+      ]
     },
     {
       "key": 6,
@@ -414,7 +420,7 @@
     }
   ],
   "stats": {
-    "articles": 57,
-    "modules_active": 6
+    "articles": 58,
+    "modules_active": 7
   }
 }

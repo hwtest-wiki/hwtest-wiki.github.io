@@ -164,6 +164,16 @@
     ]
   },
   {
+    "text": "模块五 · 低速总线",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "51 · I2C",
+        "link": "/articles/51"
+      }
+    ]
+  },
+  {
     "text": "模块六 · 高速总线 / 接口",
     "collapsed": false,
     "items": [
