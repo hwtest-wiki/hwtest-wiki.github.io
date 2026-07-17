@@ -276,6 +276,11 @@
           "nn": "46",
           "name": "MIPI",
           "qr": true
+        },
+        {
+          "nn": "47",
+          "name": "PCIe",
+          "qr": true
         }
       ]
     },
@@ -394,7 +399,7 @@
     }
   ],
   "stats": {
-    "articles": 53,
+    "articles": 54,
     "modules_active": 6
   }
 }
