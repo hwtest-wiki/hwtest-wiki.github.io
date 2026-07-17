@@ -271,6 +271,11 @@
           "nn": "45",
           "name": "UFS",
           "qr": true
+        },
+        {
+          "nn": "46",
+          "name": "MIPI",
+          "qr": true
         }
       ]
     },
@@ -389,7 +394,7 @@
     }
   ],
   "stats": {
-    "articles": 52,
+    "articles": 53,
     "modules_active": 6
   }
 }
