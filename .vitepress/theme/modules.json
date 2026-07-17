@@ -291,6 +291,11 @@
           "nn": "49",
           "name": "Thunderbolt",
           "qr": true
+        },
+        {
+          "nn": "50",
+          "name": "以太网",
+          "qr": true
         }
       ]
     },
@@ -409,7 +414,7 @@
     }
   ],
   "stats": {
-    "articles": 56,
+    "articles": 57,
     "modules_active": 6
   }
 }
