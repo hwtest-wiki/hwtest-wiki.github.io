@@ -286,6 +286,11 @@
           "nn": "48",
           "name": "DDR",
           "qr": true
+        },
+        {
+          "nn": "49",
+          "name": "Thunderbolt",
+          "qr": true
         }
       ]
     },
@@ -404,7 +409,7 @@
     }
   ],
   "stats": {
-    "articles": 55,
+    "articles": 56,
     "modules_active": 6
   }
 }
