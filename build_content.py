@@ -147,10 +147,13 @@ def process_one(folder):
     key = base + meta.get("篇号", "")
     bx = re.search(r"番外\s*0*(\d+)", key)
     qx = re.search(r"速查\s*0*(\d+)", key)
+    sx = re.search(r"SI深化\s*0*(\d+)", key)
     if bx:                                  # 实战番外：独立编号 b01/b02…
         nn = "b" + bx.group(1).zfill(2)
     elif qx:                                # 速查地图/索引篇：独立编号 q01/q02…
         nn = "q" + qx.group(1).zfill(2)
+    elif sx:                                # SI 深化篇：独立编号 si01/si02…（归模块三）
+        nn = "si" + sx.group(1).zfill(2)
     else:
         mnn = re.search(r"第\s*0*(\d+)\s*篇", key)
         nn = mnn.group(1).zfill(2) if mnn else "00"
@@ -200,7 +203,7 @@ def process_one(folder):
             for p in glob.glob(os.path.join(src_img, f"*.{ext}")):
                 shutil.copy2(p, dst)
 
-    fshort = re.sub(r"^(第\s*\d+\s*篇|番外\s*\d+|速查\s*\d+)[ _\-]*", "", base).strip()
+    fshort = re.sub(r"^(第\s*\d+\s*篇|番外\s*\d+|速查\s*\d+|SI深化\s*\d+)[ _\-]*", "", base).strip()
     return {"nn": nn, "title": title, "short": short_title(title),
             "fshort": fshort or short_title(title),
             "module": module_of(meta), "modkey": module_num_of(meta, nn),
@@ -218,7 +221,8 @@ def main():
 
     folders = sorted(glob.glob(os.path.join(ROOT, "第*篇*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "番外*"))) \
-        + sorted(glob.glob(os.path.join(ROOT, "速查*")))
+        + sorted(glob.glob(os.path.join(ROOT, "速查*"))) \
+        + sorted(glob.glob(os.path.join(ROOT, "SI深化*")))
     items = []
     for f in folders:
         if os.path.isdir(f):
