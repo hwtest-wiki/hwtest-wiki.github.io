@@ -232,6 +232,11 @@
           "nn": "51",
           "name": "I2C",
           "qr": true
+        },
+        {
+          "nn": "52",
+          "name": "SPI",
+          "qr": true
         }
       ]
     },
@@ -425,7 +430,7 @@
     }
   ],
   "stats": {
-    "articles": 59,
+    "articles": 60,
     "modules_active": 7
   }
 }
