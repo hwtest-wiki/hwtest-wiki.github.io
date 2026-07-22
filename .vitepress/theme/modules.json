@@ -237,6 +237,11 @@
           "nn": "52",
           "name": "SPI",
           "qr": true
+        },
+        {
+          "nn": "53",
+          "name": "UART",
+          "qr": true
         }
       ]
     },
@@ -430,7 +435,7 @@
     }
   ],
   "stats": {
-    "articles": 60,
+    "articles": 61,
     "modules_active": 7
   }
 }
