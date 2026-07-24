@@ -108,6 +108,10 @@
       {
         "text": "pi01 · PI深化01_动态调压AVS_DVS",
         "link": "/articles/pi01"
+      },
+      {
+        "text": "pi03 · PI深化03_高通PMIC供电体检",
+        "link": "/articles/pi03"
       }
     ]
   },
