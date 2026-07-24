@@ -152,6 +152,11 @@
           "nn": "pi03",
           "name": "PI深化03_高通PMIC供电体检",
           "qr": true
+        },
+        {
+          "nn": "ps01",
+          "name": "PI总结01_项目作战地图",
+          "qr": true
         }
       ]
     },
@@ -450,7 +455,7 @@
     }
   ],
   "stats": {
-    "articles": 64,
+    "articles": 65,
     "modules_active": 7
   }
 }
