@@ -137,6 +137,11 @@
           "nn": "26",
           "name": "Load Switch专项",
           "qr": true
+        },
+        {
+          "nn": "pi01",
+          "name": "PI深化01_动态调压AVS_DVS",
+          "qr": true
         }
       ]
     },
@@ -435,7 +440,7 @@
     }
   ],
   "stats": {
-    "articles": 61,
+    "articles": 62,
     "modules_active": 7
   }
 }

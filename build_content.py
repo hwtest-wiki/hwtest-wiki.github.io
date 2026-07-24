@@ -148,12 +148,15 @@ def process_one(folder):
     bx = re.search(r"番外\s*0*(\d+)", key)
     qx = re.search(r"速查\s*0*(\d+)", key)
     sx = re.search(r"SI深化\s*0*(\d+)", key)
+    px = re.search(r"PI深化\s*0*(\d+)", key)
     if bx:                                  # 实战番外：独立编号 b01/b02…
         nn = "b" + bx.group(1).zfill(2)
     elif qx:                                # 速查地图/索引篇：独立编号 q01/q02…
         nn = "q" + qx.group(1).zfill(2)
     elif sx:                                # SI 深化篇：独立编号 si01/si02…（归模块三）
         nn = "si" + sx.group(1).zfill(2)
+    elif px:                                # PI 深化篇：独立编号 pi01/pi02…（归模块二）
+        nn = "pi" + px.group(1).zfill(2)
     else:
         mnn = re.search(r"第\s*0*(\d+)\s*篇", key)
         nn = mnn.group(1).zfill(2) if mnn else "00"
@@ -222,7 +225,8 @@ def main():
     folders = sorted(glob.glob(os.path.join(ROOT, "第*篇*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "番外*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "速查*"))) \
-        + sorted(glob.glob(os.path.join(ROOT, "SI深化*")))
+        + sorted(glob.glob(os.path.join(ROOT, "SI深化*"))) \
+        + sorted(glob.glob(os.path.join(ROOT, "PI深化*")))
     items = []
     for f in folders:
         if os.path.isdir(f):
