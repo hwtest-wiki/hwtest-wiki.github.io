@@ -144,6 +144,11 @@
           "qr": true
         },
         {
+          "nn": "pi02",
+          "name": "PI深化02_多相供电与均流",
+          "qr": true
+        },
+        {
           "nn": "pi03",
           "name": "PI深化03_高通PMIC供电体检",
           "qr": true
@@ -445,7 +450,7 @@
     }
   ],
   "stats": {
-    "articles": 63,
+    "articles": 64,
     "modules_active": 7
   }
 }
