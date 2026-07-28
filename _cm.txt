@@ -1,7 +1,0 @@
-pi01 同步 4 张动图
-
-正文插入 4 张 gif（CPR 掰线 / 压摆率扫参 / 欠压量生长 / 窗口滑动对照），
-public/images/pi01 同步 4 个 mp4 + gif。
-
-Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
-Copilot-Session: 146125e5-149c-4b5e-aded-743cd7f5dc29
