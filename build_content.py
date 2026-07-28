@@ -10,7 +10,7 @@
   - 生成 .vitepress/sidebar.json（按模块分组）+ 首页 index.md。
 用法：python build_content.py
 """
-import os, re, glob, shutil, json
+import os, re, glob, shutil, json, datetime
 
 SITE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SITE)
@@ -132,6 +132,22 @@ def short_title(t):
     return t.strip()
 
 
+def pub_key(meta, md_path):
+    """首页「最新更新」排序键：front-matter「发布日期」优先，缺失回退源 md 修改时间。
+
+    篇号 nn 是字符串，直接倒序会让 ts/si/q 这类字母编号永远霸榜，故单列此键。
+    """
+    s = meta.get("发布日期", "") or meta.get("发布时间", "")
+    m = re.search(r"(\d{4})\D+(\d{1,2})\D+(\d{1,2})", s)
+    if m:
+        y, mo, d = (int(x) for x in m.groups())
+        try:
+            return datetime.datetime(y, mo, d).timestamp()
+        except ValueError:
+            pass
+    return os.path.getmtime(md_path)
+
+
 def process_one(folder):
     mds = [p for p in glob.glob(os.path.join(folder, "*.md"))
            if not os.path.basename(p).lower().startswith("readme")]
@@ -216,7 +232,8 @@ def process_one(folder):
     return {"nn": nn, "title": title, "short": short_title(title),
             "fshort": fshort or short_title(title),
             "module": module_of(meta), "modkey": module_num_of(meta, nn),
-            "has_quickref": bool(quickref)}
+            "has_quickref": bool(quickref),
+            "pubkey": pub_key(meta, md)}
 
 
 def main():
@@ -333,7 +350,7 @@ def main():
            '<em>含 TPS54331 偶发欠压复位范本 · 鱼骨图/5Why/双向确认 · .xlsx</em></span></a>',
            "</div>", "",
            "## 🆕 最新更新", ""]
-    for it in sorted(items, key=lambda x: x["nn"], reverse=True)[:6]:
+    for it in sorted(items, key=lambda x: x["pubkey"], reverse=True)[:6]:
         tag = " 🔧" if it["has_quickref"] else ""
         out.append(f"- [{it['nn']} · {it['title']}](/articles/{it['nn']}){tag}")
     open(os.path.join(SITE, "index.md"), "w",
