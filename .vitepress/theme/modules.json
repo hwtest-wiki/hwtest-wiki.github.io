@@ -224,17 +224,17 @@
       "note": "",
       "articles": [
         {
-          "nn": "35",
+          "nn": "ts01",
           "name": "时序基础",
           "qr": true
         },
         {
-          "nn": "36",
+          "nn": "ts02",
           "name": "时钟测试",
           "qr": true
         },
         {
-          "nn": "37",
+          "nn": "ts03",
           "name": "复位与上电时序",
           "qr": true
         }
@@ -249,17 +249,17 @@
       "note": "I2C / SPI / UART 等低速总线读写与一致性",
       "articles": [
         {
-          "nn": "51",
+          "nn": "48",
           "name": "I2C",
           "qr": true
         },
         {
-          "nn": "52",
+          "nn": "49",
           "name": "SPI",
           "qr": true
         },
         {
-          "nn": "53",
+          "nn": "50",
           "name": "UART",
           "qr": true
         }
@@ -274,67 +274,67 @@
       "note": "",
       "articles": [
         {
-          "nn": "38",
+          "nn": "35",
           "name": "一致性测试总览",
           "qr": true
         },
         {
-          "nn": "39",
+          "nn": "36",
           "name": "TDR时域反射",
           "qr": true
         },
         {
-          "nn": "40",
+          "nn": "37",
           "name": "USB2.0眼图模板",
           "qr": true
         },
         {
-          "nn": "41",
+          "nn": "38",
           "name": "USB3.x超速",
           "qr": true
         },
         {
-          "nn": "42",
+          "nn": "39",
           "name": "USB-C与USB_PD",
           "qr": true
         },
         {
-          "nn": "43",
+          "nn": "40",
           "name": "HDMI",
           "qr": true
         },
         {
-          "nn": "44",
+          "nn": "41",
           "name": "DisplayPort",
           "qr": true
         },
         {
-          "nn": "45",
+          "nn": "42",
           "name": "UFS",
           "qr": true
         },
         {
-          "nn": "46",
+          "nn": "43",
           "name": "MIPI",
           "qr": true
         },
         {
-          "nn": "47",
+          "nn": "44",
           "name": "PCIe",
           "qr": true
         },
         {
-          "nn": "48",
+          "nn": "45",
           "name": "DDR",
           "qr": true
         },
         {
-          "nn": "49",
+          "nn": "46",
           "name": "Thunderbolt",
           "qr": true
         },
         {
-          "nn": "50",
+          "nn": "47",
           "name": "以太网",
           "qr": true
         }

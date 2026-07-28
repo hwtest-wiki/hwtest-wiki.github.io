@@ -170,16 +170,16 @@
     "collapsed": false,
     "items": [
       {
-        "text": "35 · 时序基础",
-        "link": "/articles/35"
+        "text": "ts01 · 时序基础",
+        "link": "/articles/ts01"
       },
       {
-        "text": "36 · 时钟测试",
-        "link": "/articles/36"
+        "text": "ts02 · 时钟测试",
+        "link": "/articles/ts02"
       },
       {
-        "text": "37 · 复位与上电时序",
-        "link": "/articles/37"
+        "text": "ts03 · 复位与上电时序",
+        "link": "/articles/ts03"
       }
     ]
   },
@@ -188,16 +188,16 @@
     "collapsed": false,
     "items": [
       {
-        "text": "51 · I2C",
-        "link": "/articles/51"
+        "text": "48 · I2C",
+        "link": "/articles/48"
       },
       {
-        "text": "52 · SPI",
-        "link": "/articles/52"
+        "text": "49 · SPI",
+        "link": "/articles/49"
       },
       {
-        "text": "53 · UART",
-        "link": "/articles/53"
+        "text": "50 · UART",
+        "link": "/articles/50"
       }
     ]
   },
@@ -206,56 +206,56 @@
     "collapsed": false,
     "items": [
       {
-        "text": "38 · 一致性测试总览",
+        "text": "35 · 一致性测试总览",
+        "link": "/articles/35"
+      },
+      {
+        "text": "36 · TDR时域反射",
+        "link": "/articles/36"
+      },
+      {
+        "text": "37 · USB2.0眼图模板",
+        "link": "/articles/37"
+      },
+      {
+        "text": "38 · USB3.x超速",
         "link": "/articles/38"
       },
       {
-        "text": "39 · TDR时域反射",
+        "text": "39 · USB-C与USB_PD",
         "link": "/articles/39"
       },
       {
-        "text": "40 · USB2.0眼图模板",
+        "text": "40 · HDMI",
         "link": "/articles/40"
       },
       {
-        "text": "41 · USB3.x超速",
+        "text": "41 · DisplayPort",
         "link": "/articles/41"
       },
       {
-        "text": "42 · USB-C与USB_PD",
+        "text": "42 · UFS",
         "link": "/articles/42"
       },
       {
-        "text": "43 · HDMI",
+        "text": "43 · MIPI",
         "link": "/articles/43"
       },
       {
-        "text": "44 · DisplayPort",
+        "text": "44 · PCIe",
         "link": "/articles/44"
       },
       {
-        "text": "45 · UFS",
+        "text": "45 · DDR",
         "link": "/articles/45"
       },
       {
-        "text": "46 · MIPI",
+        "text": "46 · Thunderbolt",
         "link": "/articles/46"
       },
       {
-        "text": "47 · PCIe",
+        "text": "47 · 以太网",
         "link": "/articles/47"
-      },
-      {
-        "text": "48 · DDR",
-        "link": "/articles/48"
-      },
-      {
-        "text": "49 · Thunderbolt",
-        "link": "/articles/49"
-      },
-      {
-        "text": "50 · 以太网",
-        "link": "/articles/50"
       }
     ]
   },
