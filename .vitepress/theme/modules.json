@@ -212,6 +212,11 @@
           "nn": "si01",
           "name": "传输线",
           "qr": true
+        },
+        {
+          "nn": "ss01",
+          "name": "板级数字信号完整性知识地图",
+          "qr": true
         }
       ]
     },
@@ -455,7 +460,7 @@
     }
   ],
   "stats": {
-    "articles": 65,
+    "articles": 66,
     "modules_active": 7
   }
 }

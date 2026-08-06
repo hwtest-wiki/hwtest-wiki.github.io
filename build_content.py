@@ -164,6 +164,7 @@ def process_one(folder):
     bx = re.search(r"番外\s*0*(\d+)", key)
     qx = re.search(r"速查\s*0*(\d+)", key)
     sx = re.search(r"SI深化\s*0*(\d+)", key)
+    smx = re.search(r"SI总结\s*0*(\d+)", key)
     px = re.search(r"PI深化\s*0*(\d+)", key)
     tx = re.search(r"PI总结\s*0*(\d+)", key)
     dx = re.search(r"待编\s*0*(\d+)", key)
@@ -173,6 +174,8 @@ def process_one(folder):
         nn = "q" + qx.group(1).zfill(2)
     elif sx:                                # SI 深化篇：独立编号 si01/si02…（归模块三）
         nn = "si" + sx.group(1).zfill(2)
+    elif smx:                               # SI 总结/知识地图：独立编号 ss01/ss02…（归模块三）
+        nn = "ss" + smx.group(1).zfill(2)
     elif px:                                # PI 深化篇：独立编号 pi01/pi02…（归模块二）
         nn = "pi" + px.group(1).zfill(2)
     elif tx:                                # 模块总结篇：独立编号 ps01/ps02…（归模块二，PI 收官）
@@ -228,7 +231,7 @@ def process_one(folder):
             for p in glob.glob(os.path.join(src_img, f"*.{ext}")):
                 shutil.copy2(p, dst)
 
-    fshort = re.sub(r"^(第\s*\d+\s*篇|番外\s*\d+|速查\s*\d+|SI深化\s*\d+|待编\s*\d+)[ _\-]*", "", base).strip()
+    fshort = re.sub(r"^(第\s*\d+\s*篇|番外\s*\d+|速查\s*\d+|SI深化\s*\d+|SI总结\s*\d+|待编\s*\d+)[ _\-]*", "", base).strip()
     return {"nn": nn, "title": title, "short": short_title(title),
             "fshort": fshort or short_title(title),
             "module": module_of(meta), "modkey": module_num_of(meta, nn),
@@ -249,6 +252,7 @@ def main():
         + sorted(glob.glob(os.path.join(ROOT, "番外*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "速查*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "SI深化*"))) \
+        + sorted(glob.glob(os.path.join(ROOT, "SI总结*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "PI深化*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "PI总结*"))) \
         + sorted(glob.glob(os.path.join(ROOT, "待编*")))
