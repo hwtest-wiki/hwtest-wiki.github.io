@@ -197,6 +197,9 @@ def process_one(folder):
     pre = drop_teaser_paras(pre)
     pre = fix_images(pre, nn).strip()
     quickref = fix_images(quickref, nn).strip()
+    has_quickref = bool(quickref) or bool(re.search(
+        r"^##\s+(?:[一二三四五六七八九十]+[、.]\s*)?(?:🔧\s*)?工程师速查",
+        pre, flags=re.M))
 
     page = pre
     if quickref:
@@ -206,7 +209,7 @@ def process_one(folder):
     modname = module_of(meta)
     plain = re.sub(r"\s+", "", re.sub(r"!\[[^\]]*\]\([^)]*\)", "", page))
     minutes = max(1, round(len(plain) / 380))
-    qr_badge = '<span class="badge qr">🔧 含工程师速查</span>' if quickref else ""
+    qr_badge = '<span class="badge qr">🔧 含工程师速查</span>' if has_quickref else ""
     meta_bar = ('<div class="article-meta">'
                 f'<span class="badge">📘 {modname}</span>'
                 f'<span class="badge">⏱ 约 {minutes} 分钟</span>'
@@ -235,7 +238,7 @@ def process_one(folder):
     return {"nn": nn, "title": title, "short": short_title(title),
             "fshort": fshort or short_title(title),
             "module": module_of(meta), "modkey": module_num_of(meta, nn),
-            "has_quickref": bool(quickref),
+            "has_quickref": has_quickref,
             "pubkey": pub_key(meta, md)}
 
 
