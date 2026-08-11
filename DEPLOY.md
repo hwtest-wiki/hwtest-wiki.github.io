@@ -28,7 +28,7 @@
 
 ## 五、以后更新内容（每次改完文章/视频）
 ```powershell
-cd D:\copilot\硬件测试科普系列\site
+cd D:\copilot\hardware\site
 python build_content.py     # 从私有源重新生成 articles/ 与 public/images/
 git add .
 git commit -m "update: 第NN篇"
