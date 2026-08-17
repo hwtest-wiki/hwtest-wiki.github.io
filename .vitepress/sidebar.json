@@ -188,24 +188,6 @@
     ]
   },
   {
-    "text": "模块五 · 低速总线",
-    "collapsed": false,
-    "items": [
-      {
-        "text": "48 · I2C",
-        "link": "/articles/48"
-      },
-      {
-        "text": "49 · SPI",
-        "link": "/articles/49"
-      },
-      {
-        "text": "50 · UART",
-        "link": "/articles/50"
-      }
-    ]
-  },
-  {
     "text": "模块六 · 高速总线 / 接口",
     "collapsed": false,
     "items": [
@@ -236,30 +218,6 @@
       {
         "text": "41 · DisplayPort",
         "link": "/articles/41"
-      },
-      {
-        "text": "42 · UFS",
-        "link": "/articles/42"
-      },
-      {
-        "text": "43 · MIPI",
-        "link": "/articles/43"
-      },
-      {
-        "text": "44 · PCIe",
-        "link": "/articles/44"
-      },
-      {
-        "text": "45 · DDR",
-        "link": "/articles/45"
-      },
-      {
-        "text": "46 · Thunderbolt",
-        "link": "/articles/46"
-      },
-      {
-        "text": "47 · 以太网",
-        "link": "/articles/47"
       }
     ]
   },

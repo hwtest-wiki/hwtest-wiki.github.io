@@ -250,25 +250,9 @@
       "badge": "模块五",
       "title": "低速总线",
       "icon": "🔌",
-      "status": "active",
+      "status": "planned",
       "note": "I2C / SPI / UART 等低速总线读写与一致性",
-      "articles": [
-        {
-          "nn": "48",
-          "name": "I2C",
-          "qr": true
-        },
-        {
-          "nn": "49",
-          "name": "SPI",
-          "qr": true
-        },
-        {
-          "nn": "50",
-          "name": "UART",
-          "qr": true
-        }
-      ]
+      "articles": []
     },
     {
       "key": 6,
@@ -311,36 +295,6 @@
         {
           "nn": "41",
           "name": "DisplayPort",
-          "qr": true
-        },
-        {
-          "nn": "42",
-          "name": "UFS",
-          "qr": true
-        },
-        {
-          "nn": "43",
-          "name": "MIPI",
-          "qr": true
-        },
-        {
-          "nn": "44",
-          "name": "PCIe",
-          "qr": true
-        },
-        {
-          "nn": "45",
-          "name": "DDR",
-          "qr": true
-        },
-        {
-          "nn": "46",
-          "name": "Thunderbolt",
-          "qr": true
-        },
-        {
-          "nn": "47",
-          "name": "以太网",
           "qr": true
         }
       ]
@@ -460,7 +414,7 @@
     }
   ],
   "stats": {
-    "articles": 66,
-    "modules_active": 7
+    "articles": 57,
+    "modules_active": 6
   }
 }
