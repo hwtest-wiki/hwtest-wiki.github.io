@@ -198,7 +198,8 @@ def process_one(folder):
     pre = fix_images(pre, nn).strip()
     quickref = fix_images(quickref, nn).strip()
     has_quickref = bool(quickref) or bool(re.search(
-        r"^##\s+(?:[一二三四五六七八九十]+[、.]\s*)?(?:🔧\s*)?工程师速查",
+        r"^##\s+(?:(?:第\s*11\s*章)|(?:[一二三四五六七八九十]+[、.]))?"
+        r"\s*(?:🔧\s*)?工程师速查",
         pre, flags=re.M))
 
     page = pre
@@ -225,16 +226,25 @@ def process_one(folder):
     out_md = os.path.join(ART_OUT, f"{nn}.md")
     open(out_md, "w", encoding="utf-8").write(fm + page + "\n")
 
-    # 拷图（所有图片类型，仅 images/ 顶层，不含 covers 子目录）
+    # 只拷贝正文实际引用的图片，避免把 QC 帧、联系表和样片发布到网站。
     src_img = os.path.join(folder, "images")
     if os.path.isdir(src_img):
         dst = os.path.join(IMG_OUT, nn)
         os.makedirs(dst, exist_ok=True)
-        for ext in ("png", "jpg", "jpeg", "gif", "webp", "svg"):
-            for p in glob.glob(os.path.join(src_img, f"*.{ext}")):
-                shutil.copy2(p, dst)
+        referenced = {
+            os.path.basename(m)
+            for m in re.findall(r"images/([^)\s\"'<>]+)", body)
+        }
+        for name in sorted(referenced):
+            src = os.path.join(src_img, name)
+            if os.path.isfile(src):
+                shutil.copy2(src, dst)
 
-    fshort = re.sub(r"^(第\s*\d+\s*篇|番外\s*\d+|速查\s*\d+|SI深化\s*\d+|SI总结\s*\d+|待编\s*\d+)[ _\-]*", "", base).strip()
+    fshort = meta.get("短标题", "").strip() or re.sub(
+        r"^(第\s*\d+\s*篇|番外\s*\d+|速查\s*\d+|SI深化\s*\d+|SI总结\s*\d+|PI深化\s*\d+|PI总结\s*\d+|待编\s*\d+)[ _\-]*",
+        "",
+        base,
+    ).strip()
     return {"nn": nn, "title": title, "short": short_title(title),
             "fshort": fshort or short_title(title),
             "module": module_of(meta), "modkey": module_num_of(meta, nn),
@@ -347,10 +357,6 @@ def main():
            '<span class="dl-ico">📊</span>'
            '<span class="dl-body"><strong>硬件测试计划 + 用例模板</strong>'
            '<em>含 TPS54331 范本 · 空白模板换任何 IC 直接套 · .xlsx</em></span></a>',
-           '  <a class="dl-card" href="/downloads/hw_material_change_template.xlsx" download>'
-           '<span class="dl-ico">🔄</span>'
-           '<span class="dl-body"><strong>物料替换 + 回归测试模板</strong>'
-           '<em>替代料评估 / 回归清单 · .xlsx</em></span></a>',
            '  <a class="dl-card" href="/downloads/hw_8d_fa_template.xlsx" download>'
            '<span class="dl-ico">🔍</span>'
            '<span class="dl-body"><strong>8D 失效分析报告模板</strong>'

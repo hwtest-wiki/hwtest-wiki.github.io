@@ -140,22 +140,7 @@
         },
         {
           "nn": "pi01",
-          "name": "PI深化01_动态调压AVS_DVS",
-          "qr": true
-        },
-        {
-          "nn": "pi02",
-          "name": "PI深化02_多相供电与均流",
-          "qr": true
-        },
-        {
-          "nn": "pi03",
-          "name": "PI深化03_高通PMIC供电体检",
-          "qr": true
-        },
-        {
-          "nn": "ps01",
-          "name": "PI总结01_项目作战地图",
+          "name": "测量可信度与 Rail Budget",
           "qr": true
         }
       ]
@@ -296,6 +281,36 @@
           "nn": "41",
           "name": "DisplayPort",
           "qr": true
+        },
+        {
+          "nn": "42",
+          "name": "MIPI_D-PHY",
+          "qr": true
+        },
+        {
+          "nn": "43",
+          "name": "Thunderbolt_USB4",
+          "qr": true
+        },
+        {
+          "nn": "44",
+          "name": "UFS",
+          "qr": true
+        },
+        {
+          "nn": "45",
+          "name": "PCIe",
+          "qr": true
+        },
+        {
+          "nn": "46",
+          "name": "DDR_LPDDR",
+          "qr": true
+        },
+        {
+          "nn": "47",
+          "name": "以太网",
+          "qr": true
         }
       ]
     },
@@ -414,7 +429,7 @@
     }
   ],
   "stats": {
-    "articles": 57,
+    "articles": 60,
     "modules_active": 6
   }
 }

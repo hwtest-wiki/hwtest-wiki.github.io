@@ -30,15 +30,14 @@ hero:
 
 <div class="download-row">
   <a class="dl-card" href="/downloads/hw_test_plan_template.xlsx" download><span class="dl-ico">📊</span><span class="dl-body"><strong>硬件测试计划 + 用例模板</strong><em>含 TPS54331 范本 · 空白模板换任何 IC 直接套 · .xlsx</em></span></a>
-  <a class="dl-card" href="/downloads/hw_material_change_template.xlsx" download><span class="dl-ico">🔄</span><span class="dl-body"><strong>物料替换 + 回归测试模板</strong><em>替代料评估 / 回归清单 · .xlsx</em></span></a>
   <a class="dl-card" href="/downloads/hw_8d_fa_template.xlsx" download><span class="dl-ico">🔍</span><span class="dl-body"><strong>8D 失效分析报告模板</strong><em>含 TPS54331 偶发欠压复位范本 · 鱼骨图/5Why/双向确认 · .xlsx</em></span></a>
 </div>
 
 ## 🆕 最新更新
 
-- [q02 · USB、HDMI、DP、MIPI、PCIe……这些接口到底是什么、怎么分、谁看眼图谁看协议？——模块六「串行高速接口全景地图」](/articles/q02) 🔧
-- [41 · 同样一台高刷显示器，为什么厂商都让你"用 DP 线、别用 HDMI"？——DisplayPort：天生就是嵌入式时钟 + 打包传输，一致性测法和 HDMI 差在哪](/articles/41) 🔧
-- [34 · 均衡EQ怎么调：不是越强越好，怎样找到眼图和BER的最优点](/articles/34) 🔧
-- [33 · S参数到底怎么看：怎样测准、怎么判断，出现深坑后如何定位](/articles/33) 🔧
-- [32 · 抖动到底是什么：怎么测、多少算超标，Fail后怎么定位](/articles/32) 🔧
-- [31 · 眼图不是一张“眼睛”：先把 UI、时间参考、码型和判据锁定，再谈余量](/articles/31) 🔧
+- [46 · DDR5-6400冷机稳定，热机为什么报错？——DDR / LPDDR从DQS、Training到最差Byte Lane怎么测](/articles/46) 🔧
+- [37 · USB 2.0眼图怎么测才不跑偏？TP2/TP3、Template 1/2和TEST_PACKET一次讲清](/articles/37) 🔧
+- [38 · USB 3.x眼图为什么不能直接扣模板？TP2/TP4、CP9、参考接收器和JTOL一次讲清](/articles/38) 🔧
+- [47 · 笔记本2.5G网口短线满速，为什么热机后会错包、掉线并回到1G？——以太网从PHY、MDI到双绞线怎么测](/articles/47) 🔧
+- [45 · NVMe短跑满速，为什么长稳后会报AER、降速甚至掉盘？——PCIe从LTSSM到Tx/Rx/Channel怎么测](/articles/45) 🔧
+- [b03 · 物料替换与回归测试：脚一样，为什么还不能直接换？](/articles/b03) 🔧

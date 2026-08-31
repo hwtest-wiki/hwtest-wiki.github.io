@@ -106,20 +106,8 @@
         "link": "/articles/26"
       },
       {
-        "text": "pi01 · PI深化01_动态调压AVS_DVS",
+        "text": "pi01 · 测量可信度与 Rail Budget",
         "link": "/articles/pi01"
-      },
-      {
-        "text": "pi02 · PI深化02_多相供电与均流",
-        "link": "/articles/pi02"
-      },
-      {
-        "text": "pi03 · PI深化03_高通PMIC供电体检",
-        "link": "/articles/pi03"
-      },
-      {
-        "text": "ps01 · PI总结01_项目作战地图",
-        "link": "/articles/ps01"
       }
     ]
   },
@@ -218,6 +206,30 @@
       {
         "text": "41 · DisplayPort",
         "link": "/articles/41"
+      },
+      {
+        "text": "42 · MIPI_D-PHY",
+        "link": "/articles/42"
+      },
+      {
+        "text": "43 · Thunderbolt_USB4",
+        "link": "/articles/43"
+      },
+      {
+        "text": "44 · UFS",
+        "link": "/articles/44"
+      },
+      {
+        "text": "45 · PCIe",
+        "link": "/articles/45"
+      },
+      {
+        "text": "46 · DDR_LPDDR",
+        "link": "/articles/46"
+      },
+      {
+        "text": "47 · 以太网",
+        "link": "/articles/47"
       }
     ]
   },
