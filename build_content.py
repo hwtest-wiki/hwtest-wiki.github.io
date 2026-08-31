@@ -10,7 +10,14 @@
   - 生成 .vitepress/sidebar.json（按模块分组）+ 首页 index.md。
 用法：python build_content.py
 """
-import os, re, glob, shutil, json, datetime
+import os, re, glob, shutil, json, datetime, sys
+
+# Windows 控制台在 cp1252 下会把中文打印视为非法编码；统一用 UTF-8 输出，避免 build_content.py 直接中断。
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 SITE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SITE)
