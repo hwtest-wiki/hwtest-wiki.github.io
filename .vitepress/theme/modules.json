@@ -142,6 +142,11 @@
           "nn": "pi01",
           "name": "测量可信度与 Rail Budget",
           "qr": true
+        },
+        {
+          "nn": "pi02",
+          "name": "输入滤波与负阻抗",
+          "qr": true
         }
       ]
     },
@@ -429,7 +434,7 @@
     }
   ],
   "stats": {
-    "articles": 60,
+    "articles": 61,
     "modules_active": 6
   }
 }

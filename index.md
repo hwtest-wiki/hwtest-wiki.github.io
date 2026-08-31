@@ -35,9 +35,9 @@ hero:
 
 ## 🆕 最新更新
 
+- [pi02 · 输出端调了一遍还是会复位，问题为什么在输入端？——Line Transient、输入滤波与负阻抗](/articles/pi02) 🔧
+- [13 · 稳压量着 1.0V 完美达标，CPU 一满载就砸到 0.9V，芯片直接重启](/articles/13) 🔧
+- [pi01 · 6项都Pass，0.900V电源轨为什么仍然不能签字？——测量可信度与Rail Budget](/articles/pi01) 🔧
 - [46 · DDR5-6400冷机稳定，热机为什么报错？——DDR / LPDDR从DQS、Training到最差Byte Lane怎么测](/articles/46) 🔧
 - [37 · USB 2.0眼图怎么测才不跑偏？TP2/TP3、Template 1/2和TEST_PACKET一次讲清](/articles/37) 🔧
 - [38 · USB 3.x眼图为什么不能直接扣模板？TP2/TP4、CP9、参考接收器和JTOL一次讲清](/articles/38) 🔧
-- [47 · 笔记本2.5G网口短线满速，为什么热机后会错包、掉线并回到1G？——以太网从PHY、MDI到双绞线怎么测](/articles/47) 🔧
-- [45 · NVMe短跑满速，为什么长稳后会报AER、降速甚至掉盘？——PCIe从LTSSM到Tx/Rx/Channel怎么测](/articles/45) 🔧
-- [b03 · 物料替换与回归测试：脚一样，为什么还不能直接换？](/articles/b03) 🔧
